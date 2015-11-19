@@ -1,0 +1,144 @@
+\documentclass[12pt,twoside]{article}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumerate}
+
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{lemma}[thm]{Lemma}
+
+\newcommand{\mbf}{\mathbf}
+\newcommand{\mrm}{\mathrm}
+
+\newenvironment{centered}[0]{%
+  \begin{list}{}{%
+    \setlength{\topsep}{0pt}%
+    \setlength{\leftmargin}{.25in}%
+    \setlength{\rightmargin}{.25in}%
+    \setlength{\listparindent}{\parindent}%
+    \setlength{\itemindent}{\parindent}%
+    \setlength{\parsep}{\parskip}%
+  }
+  \item[]}{\end{list}}
+
+\setcounter{tocdepth}{1}
+\newtheorem{theorem}{Theorem}
+
+\title{Elliptic Curve Generation }
+\date{\today}
+\author{ Peter Manohar, Xingyou Song} 
+
+\begin{document}
+
+\maketitle
+
+\abstract{The goal of this report is to....
+}
+
+\tableofcontents
+
+\section{Introduction}
+In this section, we will introduce some of the properties of elliptic curves and their mathematical properties.
+
+\subsection{Elliptic Curves} 
+The simplest explanation of an elliptic curve is using the Weierstrass Equation; i.e. assume we have a field $K$, and consider the equation (in Weierstrass Form)
+
+\begin{equation}
+y^{2} = x^{3} + Ax + B 
+\end{equation}
+Note that here, because (through Vieta formulas),
+\begin{equation} 
+((r_{1} - r_{2})(r_{1} - r_{3})(r_{2} - r_{3}))^{2} = - (4A^{3} + 27B^{2})
+\end{equation}
+
+We do not consider curves with multiple roots, and so we take the constraint $4A^{3} + 27B^{2} \neq 0$. 
+
+
+\subsection{Group Law} 
+A property of elliptic curves is an abelian group law which forms on its points, which we will describe below. (A more general proof over all curves is by Reimann-Roch) \\
+Geometrically, consider two points $P_{1} = (x_{1}, y_{1}), P_{2} = (x_{2}, y_{2})$. 
+Define the operation of 
+\begin{equation} 
+P_{3} = P_{1} \oplus P_{2} 
+\end{equation} 
+where we draw a line in between $P_{1},P_{2}$ that hits the elliptic curve again at a new point $P'$, then reflect $P'$ about the x-axis to obtain $P_{3}$. 
+
+More specifically, we can write this explicitly in terms of algebra: 
+
+\begin{equation}
+x_{3} = s^{2} - 2x_{1} \\
+y_{3} = 
+\end{equation} 
+TODO
+
+
+
+
+\subsection{Pairings and Isogenies} 
+
+
+\subsection{j-invariant} 
+A question arises when two elliptic curves over a field $E_{1}(K), E_{2}(K)$ are have a bijective isogeny, i.e. are isomorphic with respect to the group law. 
+An intuitive answer is that the points on elliptic curves be transformed algebraically, which will use different Weierstrass Equations
+
+Note the transformation  
+
+\begin{align*}
+x' = \mu^{2}x \\   
+y' = \mu^{3}y 
+\end{align*}
+
+implies, after plugging into the Weierstrass equation,
+
+\begin{equation} 
+(y')^{2} = (x')^{3} + \mu^{4}Ax' +\mu^{6}B \implies (y')^{2} = (x')^{3} + A'x' + B'  
+\end{equation} 
+where $A' = \mu^{4}A, B' = \mu_{6}B$. $\mu$ may not exist in the field $K$, but only in its closure $\bar{K}$. 
+
+From here, we define the j-invariant $j$ of a Weierstrass Form to be 
+\begin{equation} 
+j(E) = 1728 \frac{4A^{3}}{4A^{3} + 27B^{2}}
+\end{equation}
+Note that the $j$ invariant is homogenous; scalings of the form from (5) will still leave $j$ constant. Given a $j$, then the canonical elliptic curve associated with this j-invariant will be 
+
+\begin{equation} 
+y^{2}  = x^{3} + \frac{3j}{1728 - j}x + \frac{2j}{1728 - j} 
+\end{equation}
+\\
+Going back to the concept of closed field, note that for non-closed fields, we may have non-isomorphic curves with the same j-invariant. 
+
+For instance, $y^{2} = x^{3} - 25x$, $y^{2} = x^{3} - 4x$ have $j=1728$. The first curve has infinitely many pointts in $Q$, but the second has only finite. The transformation $(x,y) \rightarrow (\mu^{2}x, \mu^{3}y)$ only exists when we consider $Q\sqrt{10}$, since $\mu = \sqrt{10}/2$ is the scaling factor. 
+
+
+
+
+
+\section{Motivations and Applications} 
+
+\subsection{Discrete Log Problem}
+
+
+\section{Generating Curves} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+\bibliographystyle{alpha}
+\bibliography{references}
+
+\end{document}
