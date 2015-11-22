@@ -81,8 +81,13 @@ TODO
 
 
 \subsection{Pairings and Isogenies} 
-Due to the abelian group law on curves, we introduce the concept of an isogeny, i.e. a homomorphism between the elliptic curve groups, that is also algebraic in nature. 
+Due to the abelian group law on curves, we introduce the concept of an isogeny, i.e. a homomorphism between the elliptic curve groups, that is also algebraic in nature. More formally, an isogeny $\phi$ is a homomorphism with respect to the group laws
+$$ \phi: E_{1} \rightarrow E_{2}, \> \> \> \> \phi(O) = O $$
 
+An example of an isogeny from $E_{1}$ to itself is multiplication by $m$, i.e. 
+\begin{equation} 
+[m]: E_{1} \rightarrow E_{1}, \> \> \> \> \> \> [m]P = P+P+P+...+P \textrm{  (m times)}
+\end{equation}
 \subsection{j-invariant} 
 A question arises when two elliptic curves over a field $E_{1}(K), E_{2}(K)$ are have a bijective isogeny, i.e. are isomorphic with respect to the group law. 
 An intuitive answer is that the points on elliptic curves be transformed algebraically, which will use different Weierstrass Equations
@@ -115,15 +120,22 @@ Going back to the concept of closed field, note that for non-closed fields, we m
 
 For instance, $y^{2} = x^{3} - 25x$, $y^{2} = x^{3} - 4x$ have $j=1728$. The first curve has infinitely many pointts in $Q$, but the second has only finite. The transformation $(x,y) \rightarrow (\mu^{2}x, \mu^{3}y)$ only exists when we consider $Q\sqrt{10}$, since $\mu = \sqrt{10}/2$ is the scaling factor. 
 
+Specifically, however, from this example, we do not need the full closure $\bar{K}$; we only need $d = \mu^{2}$, which means we only need $K(\sqrt{d})$.
+
 \subsection{Twist} 
-From the above, we can give different "twists" of curves that are isomorphic in the closed field $\bar{K}$, but not in $K$. Then 
+From the above, we can give different "twists" of curves that are isomorphic in the closed field $\bar{K}$, but not in $K$. Then if $D$ is a square free integer, then for a elliptic curve $E: y^{2} = x^{3} + Ax + B$, the given twist $E(D)$, from the above, will be 
+\begin{equation} 
+E(D): y^{2} = x^{3} + AD^{2}x + BD^{3} 
+\end{equation}
+
 
 
 
 \section{Motivations and Applications} 
 
 \subsection{Discrete Log Problem}
-
+In the discrete log problem, we are given any group $G$, with a base generator element $P$, with a ciphertext $Q$, where the problem involves finding $k$ such that $P^{k} = Q$ in $G$. \\ \\
+For elliptic curves, this becomes using a base point in a finite field $F_{p}$. However, note that by the theorem of finite abelian groups, the  
 
 \section{Generating Curves} 
 
