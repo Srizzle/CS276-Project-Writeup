@@ -144,19 +144,47 @@ E(D): y^{2} = x^{3} + AD^{2}x + BD^{3}
 \end{equation}
 
 
+\subsection{The Complex Lattice}
+\begin{theorem} 
+Let $\omega_{1}, \omega_{2}$ be linearly independent points in $C$. Then define the lattice 
+$$ L = Z\omega_{1} + Z \omega_{2}$$ Then there exists an elliptic curve that is isomorphic to $C/ L$. 
+\end{theorem}
+Define $G_{k}(L) = \sum_{\omega \in L}\omega^{-k}$. Then define the Weierstrass $\wp (z) $ function as follows: 
 
+\begin{equation} 
+\wp(z) = \frac{1}{z^{2}} + \sum_{\omega \in L}\left(\frac{1}{(z-\omega)^{2}} - \frac{1}{\omega^{2}}\right) 
+\end{equation}  
+Then this function can easily be shown, by applications of complex analysis, to be convergent and meromorphic. Then the derivative $\wp(z)$ is 
+\begin{equation} 
+\wp ' (z) = -2 \sum_{\omega \in L} \frac{1}{(z- \omega)^{2}} 
+\end{equation} 
 
+Now we have a isomorphism from the additive group on $C/L$ to the the group of elliptic points on $E(C)$, by the map $$z \rightarrow ( \wp(z), \wp' (z)), \> \> \> \> \> 0 \rightarrow O $$ with $E$ being defined as 
+\begin{equation} 
+E: y^{2} = 4x^{3} - 60G_{5}x - 140G_{6} 
+\end{equation} 
+
+The proof of this we won't go into detail in this paper, but 
 \section{Motivations and Applications} 
 
 \subsection{Discrete Log Problem}
 In the discrete log problem, we are given any group $G$, with a base generator element $P$, with a ciphertext $Q$, where the problem involves finding $k$ such that $P^{k} = Q$ in $G$. \\ \\
-For elliptic curves, this becomes using a base point $P$ with high degree, in a finite field $F_{p}$. However, note that by the theorem of finite abelian groups, the elliptic curve group is isomorphic to 
+For elliptic curves, this becomes using a base point $P$ with high degree, in a finite field $F_{p}$. However, note that by the theorem of finite abelian groups, the elliptic curve group is isomorphic to ------------
+
+\subsubsection{Pohlig-Hellman Attack}
+For an element $P$, assume it has order $N$ in the group $G$. Then the prime factorization of $N$, is important to the adversary; i.e. if 
+$$ N = \prod_{i}q_{i}^{e_{i}} $$ then if we need to find $k$ such that $P^{k} = Q$, then all we need to do is find $k$ in its base $q_{1}, q_{2},...$ expansions and then construct $k$ using the Chinese Remainder Method. We can do so on each $q_{i}$ by successively iteration. Thus the difficulty of attacking this problem relies on the largest prime dividing $N$. TODO(too long) \\ 
+
+This implies that we will need to find elliptic curves that have large- prime order torsion groups
+
+
+
 
 \section{Generating Curves} 
 
 \subsection{CM Method} 
-
-
+The general method of generating curves is the CM - method. 
+The method involves, given $(p, N)$,  take $t = p+1 - N$, with $4p = t^{2} + s^{2}|D|$, where $D$ is square free. Then compute the Hilbert class polynomial $H_{D}(X)$, and find $j$ such that $H_{D}(j) = 0 \mod p$. Using (9), we can then construct the explicit formula of the curve.   
 
 
 
