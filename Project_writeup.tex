@@ -88,6 +88,21 @@ An example of an isogeny from $E_{1}$ to itself is multiplication by $m$, i.e.
 \begin{equation} 
 [m]: E_{1} \rightarrow E_{1}, \> \> \> \> \> \> [m]P = P+P+P+...+P \textrm{  (m times)}
 \end{equation}
+Then we can define $E[m] = \{P \in E(\bar{K}) | mP = O \}$, i.e. the set of $m-$torsion points of the curve. 
+\begin{theorem} 
+If $K$ is a field of characteristic $0$ or does not divide $m$, then
+$ E[m] \simeq Z_{m} \oplus Z_{m}$.  
+\end{theorem} 
+The proof of this is mainly using the fundamental theorem of abelian groups, and analyzing the decomposition of the torsion group (TODO?) 
+
+Then the Weil-Pairing $e_{r}$ is defined as a bilinear map,  
+
+\begin{equation} 
+e_{r}: E[r] \times E[r] \rightarrow \mu_{r}
+\end{equation} where $\mu_{r}$ is the set of primitive roots of unity in $\bar{K}$, i.e. $\mu_{r} = \{x | x^{r} =1 \}$. In other words, instead of working with the $r$-torsion group of $E(K)$, we may work with the much simpler objects in the extension field of $K$. \\ 
+
+Then we may define the embedding degree to be the degree of the extension field $K(\mu_{r})$, or in other words, $[K(\mu_{r}): K]$. It is shown that then, if $k$ is the embedding degree with respect to $r$, then $k$ is the smallest integer such that $r$ divides $q^{k} -1$. 
+ 
 \subsection{j-invariant} 
 A question arises when two elliptic curves over a field $E_{1}(K), E_{2}(K)$ are have a bijective isogeny, i.e. are isomorphic with respect to the group law. 
 An intuitive answer is that the points on elliptic curves be transformed algebraically, which will use different Weierstrass Equations
@@ -135,7 +150,7 @@ E(D): y^{2} = x^{3} + AD^{2}x + BD^{3}
 
 \subsection{Discrete Log Problem}
 In the discrete log problem, we are given any group $G$, with a base generator element $P$, with a ciphertext $Q$, where the problem involves finding $k$ such that $P^{k} = Q$ in $G$. \\ \\
-For elliptic curves, this becomes using a base point in a finite field $F_{p}$. However, note that by the theorem of finite abelian groups, the  
+For elliptic curves, this becomes using a base point $P$ with high degree, in a finite field $F_{p}$. However, note that by the theorem of finite abelian groups, the elliptic curve group is isomorphic to 
 
 \section{Generating Curves} 
 
