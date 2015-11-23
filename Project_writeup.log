@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.6.6)  22 NOV 2015 16:46
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.6.6)  22 NOV 2015 17:08
 entering extended mode
 **Project_writeup.tex
 
@@ -394,31 +394,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 102--103
  []
 
 [2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 171--173
+Underfull \hbox (badness 10000) in paragraph at lines 179--181
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--177
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
 
  []
 
-No file Project_writeup.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 202.
 [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 202.
+No file Project_writeup.bbl.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 210.
+[5]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 210.
 
 ("C:\Users\songr_000\OneDrive\All\School\Berkeley\CS 276\Project\CS276 Project 
 Writeup\Project_writeup.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 202.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 202.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 210.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 210.
 Package rerunfilecheck Info: File `Project_writeup.out' has not changed.
 (rerunfilecheck)             Checksum: 71192ADBF12E20FBAC65A7E3D2AE24E7;165.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 202.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 210.
  ) 
 Here is how much of TeX's memory you used:
- 6403 strings out of 493921
- 92898 string characters out of 3144865
+ 6405 strings out of 493921
+ 92923 string characters out of 3144865
  181826 words of memory out of 3000000
  9601 multiletter control sequences out of 15000+200000
  13358 words of font info for 51 fonts, out of 3000000 for 9000
@@ -437,9 +438,9 @@ es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files
 iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiK
 TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Project_writeup.pdf (4 pages, 179506 bytes).
+Output written on Project_writeup.pdf (5 pages, 182491 bytes).
 PDF statistics:
- 122 PDF objects out of 1000 (max. 8388607)
- 33 named destinations out of 1000 (max. 500000)
+ 127 PDF objects out of 1000 (max. 8388607)
+ 35 named destinations out of 1000 (max. 500000)
  25 words of extra memory for PDF output out of 10000 (max. 10000000)
 
