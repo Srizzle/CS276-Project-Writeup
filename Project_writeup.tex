@@ -154,24 +154,37 @@ Define $G_{k}(L) = \sum_{\omega \in L}\omega^{-k}$. Then define the Weierstrass 
 \begin{equation} 
 \wp(z) = \frac{1}{z^{2}} + \sum_{\omega \in L}\left(\frac{1}{(z-\omega)^{2}} - \frac{1}{\omega^{2}}\right) 
 \end{equation}  
-Then this function can easily be shown, by applications of complex analysis, to be convergent and meromorphic. Then the derivative $\wp(z)$ is 
+Then this function can easily be shown, by applications of complex analysis, to be convergent and meromorphic, as well as periodic. Then the derivative $\wp(z)$ is 
 \begin{equation} 
 \wp ' (z) = -2 \sum_{\omega \in L} \frac{1}{(z- \omega)^{2}} 
 \end{equation} 
 
 Now we have a isomorphism from the additive group on $C/L$ to the the group of elliptic points on $E(C)$, by the map $$z \rightarrow ( \wp(z), \wp' (z)), \> \> \> \> \> 0 \rightarrow O $$ with $E$ being defined as 
 \begin{equation} 
-E: y^{2} = 4x^{3} - 60G_{5}x - 140G_{6} 
+E: y^{2} = 4x^{3} - g_{2}x - g_{3} 
 \end{equation} 
+where $g_{2} = 60_{4}, g_{3} = 140G_{6}$  
+Note that the periodicity will give: 
 
-The proof of this we won't go into detail in this paper, but this gives rise to the relationship between the complex lattice and isogenies, mainly integer endomorphisms $[m]$ give rise to $ z \rightarrow mz$, and for multiplication by a complex number $c$, we have $z \rightarrow cz$, which will induce a endormorphism on the corresponding elliptic curve.   
+\begin{equation} 
+(\wp(z_{1}), \wp'(z_{1})) + (\wp(z_{2}), \wp'(z_{2})) = (\wp(z_{1} + z_{2}), \wp'(z_{1} + z_{2})) 
+\end{equation} which gives rise to the corresponding group law on elliptic curves. 
+
+Now we relate the $j$-invariant on curves to the $j-$function of a complex lattice. First, let rescale our lattice $L$ to $Z\tau + Z$ where $\tau = \frac{w_{1}}{w_{2}}$. First, define $q = e^{2\pi \i \tau}$. Then the j-invariant related to the lattice parameter is 
+\begin{equation}
+j(\tau) = 1728 \frac{g_{2}^{3}}{g_{2}^{3} - 27 g_{3}^{2}} 
+\end{equation} 
+ 
+ 
+The proof of all of this we won't go into detail in this paper, but this gives rise to the relationship between the complex lattice and isogenies, mainly integer endomorphisms $[m]$ give rise to $ z \rightarrow mz$, and for multiplication by a complex number $c$, we have $z \rightarrow cz$, which will induce a endormorphism on the corresponding elliptic curve.   
 
 
 For curves defined on a field $K$, there is a homomorphism $K \rightarrow C$ if we linearly map the finite basis elements of $K$, $\alpha_{1}, ...,\alpha_{n}$ respectively to any algebraically independent set of elements in $C$, $\tau_{1},..., \tau_{n}$, so we can regard $E(K)$ as a curve in $C$.  
 
 \subsubsection{Using Quadratic Lattices }
+Consider the case when our lattice $L = O_{D}$ for some discriminant $D$, where the basis elements will be  (????? casework) 
 
-
+Then define the Hilbert Class polynomial $H_{D} \in Z[X]$ that is the minimal polynomial that contains the $j(L)$ as a root. There are many ways to calculate this, but we won't get to that in this paper. Thus, we can define an elliptic curve based on a square free discriminant $D$.  
 
 \section{Motivations and Applications} 
 
