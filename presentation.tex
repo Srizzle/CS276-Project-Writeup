@@ -1,0 +1,96 @@
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage{amssymb, amsmath, graphicx, subfigure}
+
+\setlength{\oddsidemargin}{.25in}
+\setlength{\evensidemargin}{.25in}
+\setlength{\textwidth}{6in}
+\setlength{\topmargin}{-0.4in}
+\setlength{\textheight}{8.5in}
+
+\newcommand{\heading}[6]{
+  \renewcommand{\thepage}{#1-\arabic{page}}
+  \noindent
+  \begin{center}
+  \framebox{
+    \vbox{
+      \hbox to 5.78in { \textbf{#2} \hfill #3 }
+      \vspace{4mm}
+      \hbox to 5.78in { {\Large \hfill #6  \hfill} }
+      \vspace{2mm}
+      \hbox to 5.78in { \textit{Instructor: #4 \hfill #5} }
+    }
+  }
+  \end{center}
+  \vspace*{4mm}
+}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{assumption}[theorem]{Assumption}
+
+\newenvironment{proof}{\noindent{\bf Proof:} \hspace*{1mm}}{
+	\hspace*{\fill} $\Box$ }
+\newenvironment{proof_of}[1]{\noindent {\bf Proof of #1:}
+	\hspace*{1mm}}{\hspace*{\fill} $\Box$ }
+\newenvironment{proof_claim}{\begin{quotation} \noindent}{
+	\hspace*{\fill} $\diamond$ \end{quotation}}
+
+\newcommand{\problemset}[3]{\heading{#1}{CS276: Cryptography}{#2}{Alessandro Chiesa}{#3}{Problem Set #1}}
+
+
+
+
+\newcommand\abs[1]{\left|#1\right|}
+\newcommand\given[1][]{\:#1\vert\:}
+\newcommand{\legendre}[2]{\genfrac{(}{)}{}{}{#1}{#2}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+$E: y^2 = x^3 + Ax + B$
+\bigskip
+
+$-16(4A^3+27B^2) \ne 0$
+
+\bigskip
+
+$P \mapsto n P$
+\bigskip
+
+$1728\frac{A^3}{4A^3+27B^2}$
+
+\bigskip
+
+
+\noindent A pairing is a nondegenerate map $e: G_1 \times G_2 \to G_3$, where $G_i$ are cyclic and $\abs{G_i} = p$ satisfying:
+\begin{enumerate}
+\item $e(aP, bQ) = e(P,Q)^{ab}$
+\item $e(P,Q) \ne 1$ for some $P,Q$
+\item $e$ is efficiently computable
+\end{enumerate}
+
+\bigskip
+
+The Weil Pairing: $e: E(F_p)[r] \times E(F_p)[r] \to \mu_r$, where $E(F_p)[r]$ is the group of $r$-torsion points and $\mu_r \subset \overline{F_p}$ are the $r$th roots of unity.
+\bigskip
+
+The Tate Pairing: $\tau: E(F_p)[r] \times E(F_p)[r]/ rE(F_p) \to \mu_r$
+
+\bigskip
+
+The Weil/Tate Pairing is efficiently computable when $\mu_r \subset F_{p^k}$, where $k$ is small. This holds iff $\gcd(r,p^k-1) = r \iff p^k-1 \equiv 0 \mod r \iff p$ is a primitive $k$th root of unity mod $r$. A curve with efficiently computable pairings is {\it pairing-friendly}.
+
+\bigskip
+
+If $r \approx p$, then $\Pr[$pairing-friendly curve$] = O(\frac{\log^3 M}{M})$
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
