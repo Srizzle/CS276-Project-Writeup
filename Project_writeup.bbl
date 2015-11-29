@@ -2,39 +2,48 @@
 
 \bibitem[SIL08]{Silverman}
 Joseph H. Silverman 
-\newblock The Arithmetic of Elliptic Curves
+\newblock The Arithmetic of Elliptic Curves,
 \newblock 2008.
 
 \bibitem[WASH08]{Washington}
 Lawrence C. Washington
-\newblock Elliptic Curves, Number Theory and Cryptography.
+\newblock Elliptic Curves, Number Theory and Cryptography,
 \newblock 2008.
 
 \bibitem[CMS10]{Advances}
 Nigel Smart. 
-\newblock Advances in Elliptic Curve Cryptography. 
+\newblock Advances in Elliptic Curve Cryptography, 
 \newblock 2010.
 
 \bibitem[CEC10]{Choosing}
 K. Rubin and A. Silverberg.
-\newblock Choosing the Correct Elliptic Curve in the CM Method. 
+\newblock Choosing the Correct Elliptic Curve in the CM Method,
 \newblock 2010.
 
 \bibitem[TAX10]{Taxonomy}
 David Freeman, Michael Scott, and Edlyn Teske.  
-\newblock A Taxonomy of Pairing-Friendly Elliptic Curves
+\newblock A Taxonomy of Pairing-Friendly Elliptic Curves,
 \newblock 2010.
 
 \bibitem[FR06]{Methods}
 David Freeman.
-\newblock Methods for Constructing Pairing Friendly Elliptic Curves, powerpoint. 
+\newblock Methods for Constructing Pairing Friendly Elliptic Curves,
 \newblock 2006. 
 
-\bibitem[EM08]{Emebedding}
+\bibitem[EM08]{Embedding}
 Koray Karabina and Edlyn Teske. 
-\newblock On Prime-Order Elliptic Curves with Embedding Degrees k = 3,4, and 6 
+\newblock On Prime-Order Elliptic Curves with Embedding Degrees k = 3, 4, and 6,
 \newblock 2008. 
 
+\bibitem[PAIR91]{Pairings}
+Alfred Menezes.
+\newblock An Introduction to Pairing-Based Cryptography,
+\newblock 1991.
+
+\bibitem[SUTH15]{Lectures}
+Andrew Sutherland.
+\newblock MIT: Math 18.783 Elliptic Curves, Lectures,
+\newblock 2015.
 
 
 

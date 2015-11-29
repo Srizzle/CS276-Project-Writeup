@@ -77,7 +77,7 @@ j(E) = 1728 \frac{4A^{3}}{4A^{3} + 27B^{2}}
 The points on an elliptic curve form an additive abelian group. We shall define the group law geometrically. \\
 Let $P = (x_p, y_p), Q = (x_q, y_q)$. A line through $P$ and $Q$ intersects $E$ at a third point, $R = (x_r,y_r)$. We define $P + Q := (x_r,-y_r)$. Pictorally, this looks like \\
 \includegraphics[width=6in]{grouplaw.png}
-The group law can also be defined in terms of algebraic formulas, which can be found in [1]. %[1] is silverman%
+The group law can also be defined in terms of algebraic formulas, which can be found in [SIL08]. %[1] is silverman%
 
 \subsection{Notation}
 \begin{itemize}
@@ -96,15 +96,15 @@ The group law can also be defined in terms of algebraic formulas, which can be f
 An isogeny of two elliptic curves $E_1$ and $E_2$ defined over a field $\mathbb F$ is a nonconstant morphism $\phi: E_1 \to E_2$, where $\phi$ is a group homomorphism from $E_1(\overline{\mathbb F}) \to E_2(\overline{\mathbb F})$. $E_1$ and $E_2$ are isomorphic if $\exists \phi_1: E_1 \to E_2$ and $\phi_2: E_2 \to E_1$, isogenies, such that $\phi_2 \circ \phi_1 =  $ Identity.
 
 \subsubsection{Separable and Inseparable Isogenies}
-Any isogeny $\phi$ can be expressed as $\phi(x,y) = (\frac{u(x)}{v(x)}, \frac{s(x)}{t(x)}y)$, where $u,v,s,t \in \mathbb F[x]$, and $\gcd(u,v) = \gcd(s,t) = 1$. [3] %[3] is mit reference
-An isogeny is separable if $(\frac{u}{v})' = 0$, and is inseparable otherwise. The degree of an isogeny is defined as $\deg(\phi) := \max(\deg(u), \deg(v))$. [3]
+Any isogeny $\phi$ can be expressed as $\phi(x,y) = (\frac{u(x)}{v(x)}, \frac{s(x)}{t(x)}y)$, where $u,v,s,t \in \mathbb F[x]$, and $\gcd(u,v) = \gcd(s,t) = 1$. [SUTH15] %[3] is mit reference
+An isogeny is separable if $(\frac{u}{v})' = 0$, and is inseparable otherwise. The degree of an isogeny is defined as $\deg(\phi) := \max(\deg(u), \deg(v))$. [SUTH15]
 For any separable isogeny $\phi$, $\deg(\phi) = \abs{ \ker \phi}$.
 
 \subsubsection{Dual isogenies}
 \begin{theorem}
 Let $\phi: E_1 \to E_2$ be an isogeny. Then $\exists$ a unique $\hat{\phi}: E_2 \to E_1$ such that $\hat \phi \circ \phi = [n]$, where $n = \deg(\phi)$.
 \end{theorem}
-\noindent The proof of this can be found in either [1] or [3]. Furthermore, for any two isogenies $\phi_1$ and $\phi_2$, $\widehat{\phi_1 + \phi_2} = \hat \phi_1 + \hat \phi_2$.
+\noindent The proof of this can be found in either [SIL08] or [SUTH15]. Furthermore, for any two isogenies $\phi_1$ and $\phi_2$, $\widehat{\phi_1 + \phi_2} = \hat \phi_1 + \hat \phi_2$.
 \subsection{Endomorphisms}
 
 An endomorphism is an isogeny from $E$ to itself. The endomorphisms of $E$ form a ring, where addition is addition of functions and multiplication is function composition.
@@ -134,7 +134,7 @@ By the above theorem, we can now define trace$(\phi) := \phi + \hat \phi$.
 $\#E(\mathbb F_p) = p + 1 - t$, where $t = {\rm trace}(\phi_p)$
 \end{theorem}
 \begin{proof}
-The fixed field of $\phi_p$ is $\mathbb F_p$, and $1- \phi_p$ is separable (see [3]). Therefore, $\ker(1- \phi_p) = \#E(\mathbb F_p)$. It is clear that $\deg(\phi_p) = p$ by definition ($u(x) = x^p$ and $v(x) = 1$). We have that
+The fixed field of $\phi_p$ is $\mathbb F_p$, and $1- \phi_p$ is separable (see [SUTH15]). Therefore, $\ker(1- \phi_p) = \#E(\mathbb F_p)$. It is clear that $\deg(\phi_p) = p$ by definition ($u(x) = x^p$ and $v(x) = 1$). We have that
 \begin{flalign*}
 &\ker(1-\phi_p) = \deg(1-\phi_p) = 1 + \deg(\phi_p) - {\rm trace}(\phi_p) = p + 1 - t \\
 &\implies \#E(\mathbb F_p) = p + 1 -t
@@ -158,7 +158,7 @@ The proof of this is mainly using the fundamental theorem of abelian groups, and
 \begin{theorem}
 Two elliptic curves $E_1(\mathbb F)$ and $E_2(\mathbb F)$ are isomorphic over $\overline{\mathbb F} \iff j(E_1) = j(E_2)$. Furthermore, $\forall j_0 \in \overline{\mathbb F}$, $\exists$ an elliptic curve $E(\mathbb F)$ such that $j(E) = j_0$.
 \end{theorem}
-The proof requires some lengthy algebraic manipulation, which can be found in [1]. As a consequence of the proof, for any $j \in \overline{\mathbb F}$, we can define an canonical elliptic curve $E$ associated with this j-invariant. We see that 
+The proof requires some lengthy algebraic manipulation, which can be found in [SIL08]. As a consequence of the proof, for any $j \in \overline{\mathbb F}$, we can define an canonical elliptic curve $E$ associated with this j-invariant. We see that 
 
   
 \begin{flalign} 
@@ -261,16 +261,32 @@ Consider the case when our lattice $L = O_{D}$ where $D = \mathbb{Q}(\sqrt{-d})$
 
 Then define the Hilbert Class polynomial $H_{D} \in Z[X]$ that is the minimal polynomial that contains the $j(L)$ as a root. There are many ways to calculate this, but we won't get to that in this paper. Thus, we can define an elliptic curve based on a square free discriminant $D$.  
 
-\subsection{Pairings}
-Then the Weil-Pairing $e_{r}$ is defined as a bilinear map,  
+\subsection{Pairings and Pairing-Friendly Curves}
+Let $G$ be an additive abelian group of order $p$, a prime, and let $G'$ be a multiplicative group of order $p$. A pairing is a bilinear map $e: G \times G \to G'$ satisfying:
+\begin{enumerate}
+\item (bilinearity) $e(P_1 + P_2, P_3) = e(P_1,P_3)e(P_2,P_3) \ \forall P_1,P_2,P_3 \in G$
+\item (non-degeneracy) $e(P,P) \ne 1$, where $G = \mathopen{<} P \mathopen{>}$
+\item (computability) $e$ is efficiently computable
+\end{enumerate} [PAIR91]
+\subsubsection{Weil and Tate Pairings}
+Let $E[r] = \{ P \in E(\mathbb F_p) \given rP = O\}$ be the $r$-torsion group of $E(\mathbb F_p)$.
+\\ \\
+\noindent The Weil Pairing is a map $e_r: E[r] \times E[r] \to \mu_r$, where $\mu_{r}$ is the set of $r$th roots of unity in $\overline{\mathbb F_p}$. \\ 
 
-\begin{equation} 
-e_{r}: E[r] \times E[r] \rightarrow \mu_{r}
-\end{equation} where $\mu_{r}$ is the set of primitive roots of unity in $\bar{K}$, i.e. $\mu_{r} = \{x | x^{r} =1 \}$. In other words, instead of working with the $r$-torsion group of $E(K)$, we may work with the much simpler objects in the extension field of $K$. \\ 
+\noindent The Tate Pairing is a map: $\tau_r: E(F_p)[r] \times E(F_p)[r]/ rE(F_p) \to \mu_r$, where $\tau_r(P,Q) = e_r(P, R - \phi_p(R))$, where $R$ satisfies $r R = Q$. [WASH08]
 
-Then we may define the embedding degree to be the degree of the extension field $K(\mu_{r})$, or in other words, $[K(\mu_{r}): K]$. It is shown that then, if $k$ is the embedding degree with respect to $r$, then $k$ is the smallest integer such that $r$ divides $q^{k} -1$. 
+
+
+ \subsubsection{Embedding Degree}
  
+We do not need the full algebraic closure $\overline{\mathbb F_p}$ to determine $\mu_r$. Instead, we can find a positive integer $k$ such that $\mu_r \subset \mathbb F_{p^k}$, that is, we require only a finite degree algebraic extension. We define the embedding degree $k$ of $E(\mathbb F_p)$ with respect to $r$ as $k:= [\mathbb F_p(\mu_r) : \mathbb F_p]$, the degree of the extension field. Therefore, we can regard $k$ as the smallest positive integer such that $\mu_r \subset \mathbb F_{p^k}$.
+\\ \\
+\noindent Alternatively, suppose that $k$ is the smallest positive integer such that $\mu_r \subset \mathbb F_{p^k}$.  $\mu_r \subset \mathbb F_{p^k} \iff r \Big |  \# \mathbb F^*_{p^k}$ (since multiplicative groups of finite fields are cyclic) $ \iff \gcd(r, p^k-1) = r \iff p^k-1 \equiv 0 \mod r \iff p$ is a primitive $k$th root of unity mod $r$ (since we picked $k$ to be minimal). 
+\\ \\
+\noindent Therefore, the embedding degree $k$ is the smallest positive integer satisfying $p^k \equiv 1 \mod r$.
 
+\subsubsection{Pairing-Friendly Curves}
+The Weil/Tate Pairing is efficiently computable when $k$ is small, as computing the pairings requires computation in $\mathbb F_{p^k}$. A curve with efficiently computable pairings is {\it pairing-friendly}. Pairing-friendly curves are rare. In general, if $r \approx p$, then $\Pr[$pairing-friendly curve$] = O(\frac{\log^3 M}{M})$
 
 \section{Motivations and Applications} 
 
@@ -306,24 +322,7 @@ This implies that we will need to find elliptic curves that have large-prime ord
  \end{algorithm}
  \bigskip
  
- 
-\begin{algorithm}[H]
- \KwIn{$p$, a prime, and $N$ a positive integer, $k$ embedding degree}
- \KwOut{An elliptic curve $E(\mathbb F_p)$ where $\#E(\mathbb F_p) = N$}
- $t := p+1 - N$\; 
- Find $r$ such that $r | N$ and the order of $q$ in $\textrm{mod  } r$ is $k$ \\
- $D = $ square free part of $t^2-4p$\;
- $H_D(x) = $ Hilbert class polynomial \\
- Pick $j \in \mathbb F_p$ such that $H_D(j) = 0$
- Compute $E$ according to $(4)$.
- 
- \eIf {$\#E(\mathbb F_p) = N$} {
- \Return{ $E$}}
- {\Return quadratic twist of $E$}
- \end{algorithm}
- \bigskip 
- 
- 
+
  
  
  
@@ -334,16 +333,42 @@ This implies that we will need to find elliptic curves that have large-prime ord
 \\ 
 Rationale for this algorithm: 
 
+\subsection{Cocks Pinch Method}
+
+We wish to construct a curve with a subgroup of size $r$ and embedding degree $k$. Suppose we also have chosen a CM discriminant $D$ such that $\legendre{D}{r} = 1$. The Cocks Pinch method finds a prime $p$ and the trace of Frobenius $t$ such that $\exists$ an elliptic curve $E$ over $\mathbb F_p$ with trace $t$, and a subgroup of size $r$ with embedding degree $k$. There are $3$ conditions on $p,t$:
+\begin{enumerate}
+\item $t^2-4p = f^2 D$, for some $f$. This means that $E$ has CM discriminant $D$
+\item $p+1-t \equiv 0 \mod r$. This means that $r \Big | \#E(\mathbb F_p) \implies $ there is a subgroup of size $r$ by the characterization of finitely generated abelian groups
+\item $p$ is a primitive $k$th root of unity mod $r$. As mentioned earlier, this condition is equivalent to $E$ having embedding degree $k$ with respect to the subgroup of size $r$.
+
+\end{enumerate}
+We see that we only need to satisfy the above $3$ conditions for $p,t$. To do this, we first choose $g$, a primitive $k$th root of unity mod $r$. We know that $t-1 \equiv p \equiv g \mod r$. Using (1), we see that $\frac{(t^2 - f^2 D)}{4} = p$. We can set $a= 2^{-1} (g+1) \mod r$ (as integers). Then, $2 a \equiv g+1 \equiv t \mod r \implies a^2 \equiv \frac{t^2}{4} \mod r$. We can also set $f_0 = \frac{2(a-1)}{\sqrt D} \mod r$. Suppose $p = \frac{(t^2 - f^2_0 D)}{4}$ is prime, and $t = 2a$. Then $p+1 - t \equiv a^2 - (a-1)^2 + 1 - t \equiv 2a -1 + 1 - t \equiv 0 \mod r$, so that (2) is satisfied, and (2) $\implies$ (3) since $t-1 \equiv g$. (1) is satisfied by construction of $p$, and so we have the desired output. If $p$ is not prime, then we can compute $p = \frac{(t^2 - f^2 D)}{4}$ for $f = f_0 + ir$, which gives new values for $p$ while preserving the above congruences mod $r$. If the algorithm succeeds in finding a prime $p$ then it outputs $p,t$, and will output $\bot$ if it fails. The algorithm is given below in pseudocode:
+ 
+\begin{algorithm}[H]
+ \KwIn{$k$, embedding degree, $r$, size of subgroup, $D$, CM discriminant with $\legendre{D}{r} = 1$}
+ \KwOut{$p$, a prime, and $t$ a trace of Frobenius}
+$a := 2^{-1} (g+1) \mod r$ (as integers) \\
+$f = \frac{2(a-1)}{d}$ (as integers where $d \equiv \sqrt D \mod r$) \\
+$t := 2a$ \\
+$p = \frac{(t^2 - f^2 D)}{4}$ \\
+\While {$p$ is not prime}{ $f = f + r$\\
+$p = \frac{(t^2 - f^2 D)}{4}$ \\
+\If{running for too long} {\Return {$\bot$}}
+}
+\Return{$p,t$}
+
+ \end{algorithm}
+ \bigskip 
+ 
+ If the algorithm succeeds, we can use the CM method to construct the desired elliptic curve $E$.
 
 
 
-
-
+\subsection{Dupont Enge Morain Method}
 
 
 
 
 \bibliographystyle{alpha} 
 \bibliography{references}
-
 \end{document}

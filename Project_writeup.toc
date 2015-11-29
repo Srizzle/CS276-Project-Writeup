@@ -14,9 +14,14 @@
 \contentsline {subsubsection}{\numberline {1.7.1}Quadratic Twists}{5}{subsubsection.1.7.1}
 \contentsline {subsection}{\numberline {1.8}The Complex Lattice}{5}{subsection.1.8}
 \contentsline {subsubsection}{\numberline {1.8.1}Using Quadratic Lattices }{6}{subsubsection.1.8.1}
-\contentsline {subsection}{\numberline {1.9}Pairings}{6}{subsection.1.9}
+\contentsline {subsection}{\numberline {1.9}Pairings and Pairing-Friendly Curves}{6}{subsection.1.9}
+\contentsline {subsubsection}{\numberline {1.9.1}Weil and Tate Pairings}{6}{subsubsection.1.9.1}
+\contentsline {subsubsection}{\numberline {1.9.2}Embedding Degree}{7}{subsubsection.1.9.2}
+\contentsline {subsubsection}{\numberline {1.9.3}Pairing-Friendly Curves}{7}{subsubsection.1.9.3}
 \contentsline {section}{\numberline {2}Motivations and Applications}{7}{section.2}
 \contentsline {subsection}{\numberline {2.1}Discrete Log Problem}{7}{subsection.2.1}
 \contentsline {subsubsection}{\numberline {2.1.1}Pohlig-Hellman Attack}{7}{subsubsection.2.1.1}
-\contentsline {section}{\numberline {3}Constructing Pairing-Friendly Curves}{7}{section.3}
-\contentsline {subsection}{\numberline {3.1}Complex Multiplication Method}{7}{subsection.3.1}
+\contentsline {section}{\numberline {3}Constructing Pairing-Friendly Curves}{8}{section.3}
+\contentsline {subsection}{\numberline {3.1}Complex Multiplication Method}{8}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Cocks Pinch Method}{8}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Dupont Enge Morain Method}{9}{subsection.3.3}
