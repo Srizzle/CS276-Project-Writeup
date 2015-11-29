@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  28 NOV 2015 17:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  28 NOV 2015 17:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -409,12 +409,12 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 84.
  [2 <./grouplaw.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 113--116
+Underfull \hbox (badness 10000) in paragraph at lines 114--117
 
  []
 
 [3]
-Overfull \hbox (0.37039pt too wide) in paragraph at lines 158--159
+Overfull \hbox (0.37039pt too wide) in paragraph at lines 159--160
 []\OT1/cmr/m/it/10.95 Two el-lip-tic curves $\OML/cmm/m/it/10.95 E[]\OT1/cmr/m/
 n/10.95 (\U/msb/m/n/10.95 F\OT1/cmr/m/n/10.95 )$ \OT1/cmr/m/it/10.95 and $\OML/
 cmm/m/it/10.95 E[]\OT1/cmr/m/n/10.95 (\U/msb/m/n/10.95 F\OT1/cmr/m/n/10.95 )$ \
@@ -425,20 +425,20 @@ m/m/it/10.95 j\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 E[]\OT1/cmr/m/n/10.95 ) =
 
 [4]
 
-LaTeX Warning: Command \i invalid in math mode on input line 246.
+LaTeX Warning: Command \i invalid in math mode on input line 247.
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 267--268
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--278
+Underfull \hbox (badness 10000) in paragraph at lines 277--279
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 281--282
+Underfull \hbox (badness 10000) in paragraph at lines 282--283
 
  []
 
@@ -447,15 +447,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 281--282
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 308.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 312.
  [7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 308.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 312.
  (./Project_writeup.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 308.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 308.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 312.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 312.
 Package rerunfilecheck Info: File `Project_writeup.out' has not changed.
 (rerunfilecheck)             Checksum: 345799625E5BD052EDFA1DC11A42D9DD;162.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 308.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 312.
  ) 
 Here is how much of TeX's memory you used:
  6531 strings out of 493089
@@ -481,7 +481,7 @@ e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/20
 15/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texliv
 e/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Project_writeup.pdf (7 pages, 260891 bytes).
+Output written on Project_writeup.pdf (7 pages, 261301 bytes).
 PDF statistics:
  168 PDF objects out of 1000 (max. 8388607)
  140 compressed objects within 2 object streams

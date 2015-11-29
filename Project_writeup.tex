@@ -87,6 +87,7 @@ The group law can also be defined in terms of algebraic formulas, which can be f
 \item $E(\mathbb F) = \{\mathbb F \times \mathbb F \given E(x,y) = 0\}$
 \item $\phi$ is an isogeny (or endomorphism)
 \item $\phi_p$ is the Frobenius endomorphism
+\item $[n]$ is the multiplication by $n$ map
 \end{itemize}
 
 
@@ -287,8 +288,11 @@ This implies that we will need to find elliptic curves that have large- prime or
 
 \section{Generating Curves} 
 
-\subsection{CM Method} 
-The general method of generating curves is the CM - method. 
+\subsection{Complex Multiplication Method} 
+Given a prime $p$ and number $N$, this method constructs a curve $E$ over $\mathbb F_p$ with $N$ points. 
+
+
+
 The method involves, given $(p, N)$,  take $t = p+1 - N$, with $4p = t^{2} + s^{2}|D|$, where $D$ is square free. Then compute the Hilbert class polynomial $H_{D}(X)$, and find $j$ such that $H_{D}(j) = 0 \mod p$. Using (9), we can then construct the explicit formula of the curve.   
 
 
