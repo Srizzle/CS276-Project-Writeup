@@ -18,5 +18,5 @@
 \contentsline {section}{\numberline {2}Motivations and Applications}{6}{section.2}
 \contentsline {subsection}{\numberline {2.1}Discrete Log Problem}{6}{subsection.2.1}
 \contentsline {subsubsection}{\numberline {2.1.1}Pohlig-Hellman Attack}{7}{subsubsection.2.1.1}
-\contentsline {section}{\numberline {3}Generating Curves}{7}{section.3}
+\contentsline {section}{\numberline {3}Constructing Pairing-Friendly Curves}{7}{section.3}
 \contentsline {subsection}{\numberline {3.1}Complex Multiplication Method}{7}{subsection.3.1}

@@ -9,7 +9,7 @@
 \usepackage{verbatim}
 \usepackage{graphicx}
 \usepackage{hyperref}
-
+\usepackage[]{algorithm2e}
 
 \newenvironment{proof}{\noindent{\bf Proof:} \hspace*{1mm}}{
 	\hspace*{\fill} $\Box$ }
@@ -161,11 +161,11 @@ Two elliptic curves $E_1(\mathbb F)$ and $E_2(\mathbb F)$ are isomorphic over $\
 The proof requires some lengthy algebraic manipulation, which can be found in [1]. As a consequence of the proof, for any $j \in \overline{\mathbb F}$, we can define an canonical elliptic curve $E$ associated with this j-invariant. We see that 
 
   
-\begin{flalign*} 
+\begin{flalign} 
 & E: y^{2}  = x^{3} + \frac{3j}{1728 - j}x + \frac{2j}{1728 - j} \text{\ if \ } j \ne 0, 1728\\
-& E: y^2 = x^3 + 1 \text{\ if \ }  j = 0 \\
-& E: y^2 = x^3 + x \text{\ if \ } j = 1728
-\end{flalign*}
+\nonumber & E: y^2 = x^3 + 1 \text{\ if \ }  j = 0 \\
+\nonumber & E: y^2 = x^3 + x \text{\ if \ } j = 1728
+\end{flalign}
 
 \begin{comment}
 A question arises when two elliptic curves over a field $E_{1}(K), E_{2}(K)$ are have a bijective isogeny, i.e. are isomorphic with respect to the group law. 
@@ -286,15 +286,25 @@ This implies that we will need to find elliptic curves that have large- prime or
 
 
 
-\section{Generating Curves} 
+\section{Constructing Pairing-Friendly Curves} 
 
 \subsection{Complex Multiplication Method} 
-Given a prime $p$ and number $N$, this method constructs a curve $E$ over $\mathbb F_p$ with $N$ points. 
 
-
-
-The method involves, given $(p, N)$,  take $t = p+1 - N$, with $4p = t^{2} + s^{2}|D|$, where $D$ is square free. Then compute the Hilbert class polynomial $H_{D}(X)$, and find $j$ such that $H_{D}(j) = 0 \mod p$. Using (9), we can then construct the explicit formula of the curve.   
-
+\begin{algorithm}[H]
+ \KwIn{$p$, a prime, and $N$ a positive integer}
+ \KwOut{An elliptic curve $E(\mathbb F_p)$ where $\#E(\mathbb F_p) = N$}
+ $t := p+1 - N$\; 
+ $D = $ square free part of $t^2-4p$\;
+ $H_D(x) = $ Hilbert class polynomial
+ Pick $j \in \mathbb F_p$ such that $H_D(j) = 0$
+ Compute $E$ according to $(4)$.
+ 
+ \eIf {$\#E(\mathbb F_p) = N$} {
+ \Return{ $E$}}
+ {\Return quadratic twist of $E$}
+ \end{algorithm}
+ \bigskip
+\noindent The above algorithm will always succeed provided that such a curve $E$ exists and $D$ is not too large. A slight subtlety arises if $j = 0$ or $j = 1728$. If $j = 0$, then there are $6$ classes of curves, corresponding to sextic twists of $E$ by $1, \zeta, \zeta^2, \dots, \zeta^5$, for $\zeta$ a primitive root of unity in $\mathbb F_p$. If $j = 1728$, then there are $4$ classes of curves, corresponding to quartic twists of $E$ by $1, \zeta, \dots \zeta^3$, for $\zeta$ a primitive root of unity in $\mathbb F_p$. If a curve $E$ exists, then one of these curves will satisfy the conditions of the algorithm. TODO NEED SOURCE
 
 
 
