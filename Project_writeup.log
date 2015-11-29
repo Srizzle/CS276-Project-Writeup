@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.6.6)  29 NOV 2015 11:24
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.6.6)  29 NOV 2015 11:35
 entering extended mode
 **Project_writeup.tex
 
@@ -476,46 +476,49 @@ $
 
 [4]
 
-LaTeX Warning: Command \i invalid in math mode on input line 247.
+LaTeX Warning: Command \i invalid in math mode on input line 248.
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 268--269
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 277--279
+Underfull \hbox (badness 10000) in paragraph at lines 278--280
 
  []
 
 [6]
-Overfull \hbox (58.74939pt too wide) in paragraph at lines 293--305
+Overfull \hbox (58.74939pt too wide) in paragraph at lines 294--306
 $[]$ 
  []
 
 
-Overfull \hbox (58.74939pt too wide) in paragraph at lines 309--322
+Overfull \hbox (58.74939pt too wide) in paragraph at lines 310--323
 $[]$ 
  []
 
-[7]
+
+Underfull \vbox (badness 3471) has occurred while \output is active []
+
+ [7]
 ("C:\Users\songr_000\OneDrive\All\School\Berkeley\CS 276\Project\CS276 Project 
 Writeup\Project_writeup.bbl"
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 350.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 351.
  [8]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 350.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 351.
 
 ("C:\Users\songr_000\OneDrive\All\School\Berkeley\CS 276\Project\CS276 Project 
 Writeup\Project_writeup.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 350.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 350.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 351.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 351.
 Package rerunfilecheck Info: File `Project_writeup.out' has not changed.
 (rerunfilecheck)             Checksum: 0DAB09F921376B00E45C0E749F371E38;184.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 350.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 351.
  )
 (\end occurred inside a group at level 1)
 
@@ -528,7 +531,7 @@ Here is how much of TeX's memory you used:
  10539 multiletter control sequences out of 15000+200000
  13358 words of font info for 51 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 29i,10n,32p,665b,1954s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,10n,32p,665b,1988s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
 cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 /cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
@@ -545,7 +548,7 @@ es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files
 86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86
 )/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files (
 x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Project_writeup.pdf (8 pages, 283805 bytes).
+Output written on Project_writeup.pdf (8 pages, 284595 bytes).
 PDF statistics:
  173 PDF objects out of 1000 (max. 8388607)
  52 named destinations out of 1000 (max. 500000)

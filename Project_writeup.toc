@@ -11,12 +11,12 @@
 \contentsline {subsection}{\numberline {1.6}j-invariant}{4}{subsection.1.6}
 \contentsline {subsubsection}{\numberline {1.6.1}Example}{4}{subsubsection.1.6.1}
 \contentsline {subsection}{\numberline {1.7}Twists}{4}{subsection.1.7}
-\contentsline {subsubsection}{\numberline {1.7.1}Quadratic Twists}{4}{subsubsection.1.7.1}
+\contentsline {subsubsection}{\numberline {1.7.1}Quadratic Twists}{5}{subsubsection.1.7.1}
 \contentsline {subsection}{\numberline {1.8}The Complex Lattice}{5}{subsection.1.8}
 \contentsline {subsubsection}{\numberline {1.8.1}Using Quadratic Lattices }{6}{subsubsection.1.8.1}
 \contentsline {subsection}{\numberline {1.9}Pairings}{6}{subsection.1.9}
-\contentsline {section}{\numberline {2}Motivations and Applications}{6}{section.2}
-\contentsline {subsection}{\numberline {2.1}Discrete Log Problem}{6}{subsection.2.1}
+\contentsline {section}{\numberline {2}Motivations and Applications}{7}{section.2}
+\contentsline {subsection}{\numberline {2.1}Discrete Log Problem}{7}{subsection.2.1}
 \contentsline {subsubsection}{\numberline {2.1.1}Pohlig-Hellman Attack}{7}{subsubsection.2.1.1}
 \contentsline {section}{\numberline {3}Constructing Pairing-Friendly Curves}{7}{section.3}
 \contentsline {subsection}{\numberline {3.1}Complex Multiplication Method}{7}{subsection.3.1}

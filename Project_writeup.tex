@@ -194,9 +194,10 @@ Note that the $j$ invariant is homogenous; scalings of the form from (5) will st
 \end{comment}
 
 \subsubsection{Example}
-$E_1(\mathbb F)$ and $E_2(\mathbb F)$ can be isomorphic over $\overline{\mathbb F}$, but not over $\mathbb F$. As an example, consider the curves $E_1: y^{2} = x^{3} - 25x$, $E_2: y^{2} = x^{3} - 4x$ have $j=1728$. $\#E_1(\mathbb Q) = \infty$, but $\#E_2(\mathbb Q) < \infty$. The transformation $(x,y) \rightarrow (\mu^{2}x, \mu^{3}y)$, $\mu = \frac{\sqrt{10}}{2}$ establishes an isomorphism over $\mathbb Q(\sqrt{10})$, but no such isomorphism exists over $\mathbb Q$.
+$E_1(\mathbb F)$ and $E_2(\mathbb F)$ can be isomorphic over $\overline{\mathbb F}$, but not over $\mathbb F$. As an example, consider the curves $E_1: y^{2} = x^{3} - 25x$, $E_2: y^{2} = x^{3} - 4x$ have $j=1728$. $\#E_1(\mathbb Q) = \infty$ because we can just take an infinite group with generator $(-4,6)$ but $\#E_2(\mathbb Q) < \infty$ because the only points on it $\infty, (2,0), (-2,0), (0,0)$ form a finite abelian group. \\
+The transformation $(x,y) \rightarrow (\mu^{2}x, \mu^{3}y)$, $\mu = \frac{\sqrt{10}}{2}$ establishes an isomorphism over $\mathbb Q(\sqrt{10})$, but no such isomorphism exists over $\mathbb Q$.
 
-From this example, we can see that we do not necessarily need the full closure $\overline{\mathbb F}$; we only needed $d \in \mathbb F$ such that $d= \mu^{2}$, which in this case was $\mathbb Q(\sqrt{10})$.
+From this example, we can see that we do not necessarily need the full closure $\overline{\mathbb F}$; we only needed $d \in \mathbb F$ such that $d= \mu^{2}$, which in this case was $\mathbb Q(\sqrt{10})$, which gives rise to the idea of quadratic twists. 
 
 \subsection{Twists} 
 Two curves $E_1(\mathbb F)$ and $E_2(\mathbb F)$ are {\it twists} if they are isomorphic over $\overline{\mathbb F}$ but not over $\mathbb F$.
