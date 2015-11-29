@@ -1,3 +1,42 @@
 \begin{thebibliography}{}
 
+\bibitem[SIL08]{Silverman}
+Joseph H. Silverman 
+\newblock The Arithmetic of Elliptic Curves
+\newblock 2008.
+
+\bibitem[WASH08]{Washington}
+Lawrence C. Washington
+\newblock Elliptic Curves, Number Theory and Cryptography.
+\newblock 2008.
+
+\bibitem[CMS10]{Advances}
+Nigel Smart. 
+\newblock Advances in Elliptic Curve Cryptography. 
+\newblock 2010.
+
+\bibitem[CEC10]{Choosing}
+K. Rubin and A. Silverberg.
+\newblock Choosing the Correct Elliptic Curve in the CM Method. 
+\newblock 2010.
+
+\bibitem[TAX10]{Taxonomy}
+David Freeman, Michael Scott, and Edlyn Teske.  
+\newblock A Taxonomy of Pairing-Friendly Elliptic Curves
+\newblock 2010.
+
+\bibitem[FR06]{Methods}
+David Freeman.
+\newblock Methods for Constructing Pairing Friendly Elliptic Curves, powerpoint. 
+\newblock 2006. 
+
+\bibitem[EM08]{Emebedding}
+Koray Karabina and Edlyn Teske. 
+\newblock On Prime-Order Elliptic Curves with Embedding Degrees k = 3,4, and 6 
+\newblock 2008. 
+
+
+
+
 \end{thebibliography}
+
