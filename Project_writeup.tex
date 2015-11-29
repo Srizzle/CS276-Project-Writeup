@@ -275,13 +275,13 @@ Then we may define the embedding degree to be the degree of the extension field 
 
 \subsection{Discrete Log Problem}
 In the discrete log problem, we are given any group $G$, with a base generator element $P$, with a ciphertext $Q$, where the problem involves finding $k$ such that $P^{k} = Q$ in $G$. \\ \\
-For elliptic curves, this becomes using a base point $P$ with high degree, in a finite field $F_{p}$. However, note that by the theorem of finite abelian groups, the elliptic curve group is isomorphic to ------------
+For elliptic curves, this becomes using a base point $P$ with degree $N$ as a generator, in a finite field $F_{p}$, which will create a cyclic group. However, note that by the theorem of finite abelian groups, this cyclic group will be isomorphic to a direct sum of cyclic groups based on the prime factorization of $N$
 
 \subsubsection{Pohlig-Hellman Attack}
 For an element $P$, assume it has order $N$ in the group $G$. Then the prime factorization of $N$, is important to the adversary; i.e. if 
-$$ N = \prod_{i}q_{i}^{e_{i}} $$ then if we need to find $k$ such that $P^{k} = Q$, then all we need to do is find $k$ in its base $q_{1}, q_{2},...$ expansions and then construct $k$ using the Chinese Remainder Method. We can do so on each $q_{i}$ by successively iteration. Thus the difficulty of attacking this problem relies on the largest prime dividing $N$. TODO(too long) \\ 
+$$ N = \prod_{i}q_{i}^{e_{i}} $$ then if we need to find $k$ such that $P^{k} = Q$, then all we need to do is find $k$ in its base $q_{1}, q_{2},...$ expansions and then construct $k$ using the Chinese Remainder Method. We can do so on each $q_{i}$ by successively iteration. Thus the difficulty of attacking this problem relies on the largest prime dividing $N$. 
 
-This implies that we will need to find elliptic curves that have large- prime order torsion groups
+This implies that we will need to find elliptic curves that have large-prime order torsion groups. 
 
 
 
@@ -295,7 +295,7 @@ This implies that we will need to find elliptic curves that have large- prime or
  \KwOut{An elliptic curve $E(\mathbb F_p)$ where $\#E(\mathbb F_p) = N$}
  $t := p+1 - N$\; 
  $D = $ square free part of $t^2-4p$\;
- $H_D(x) = $ Hilbert class polynomial
+ $H_D(x) = $ Hilbert class polynomial \\
  Pick $j \in \mathbb F_p$ such that $H_D(j) = 0$
  Compute $E$ according to $(4)$.
  
@@ -304,7 +304,35 @@ This implies that we will need to find elliptic curves that have large- prime or
  {\Return quadratic twist of $E$}
  \end{algorithm}
  \bigskip
+ 
+ 
+\begin{algorithm}[H]
+ \KwIn{$p$, a prime, and $N$ a positive integer, $k$ embedding degree}
+ \KwOut{An elliptic curve $E(\mathbb F_p)$ where $\#E(\mathbb F_p) = N$}
+ $t := p+1 - N$\; 
+ Find $r$ such that $r | N$ and the order of $q$ in $\textrm{mod  } r$ is $k$ \\
+ $D = $ square free part of $t^2-4p$\;
+ $H_D(x) = $ Hilbert class polynomial \\
+ Pick $j \in \mathbb F_p$ such that $H_D(j) = 0$
+ Compute $E$ according to $(4)$.
+ 
+ \eIf {$\#E(\mathbb F_p) = N$} {
+ \Return{ $E$}}
+ {\Return quadratic twist of $E$}
+ \end{algorithm}
+ \bigskip 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 \noindent The above algorithm will always succeed provided that such a curve $E$ exists and $D$ is not too large. A slight subtlety arises if $j = 0$ or $j = 1728$. If $j = 0$, then there are $6$ classes of curves, corresponding to sextic twists of $E$ by $1, \zeta, \zeta^2, \dots, \zeta^5$, for $\zeta$ a primitive root of unity in $\mathbb F_p$. If $j = 1728$, then there are $4$ classes of curves, corresponding to quartic twists of $E$ by $1, \zeta, \dots \zeta^3$, for $\zeta$ a primitive root of unity in $\mathbb F_p$. If a curve $E$ exists, then one of these curves will satisfy the conditions of the algorithm. TODO NEED SOURCE
+\\ 
+Rationale for this algorithm: 
+
 
 
 
