@@ -77,7 +77,7 @@ j(E) = 1728 \frac{4A^{3}}{4A^{3} + 27B^{2}}
 The points on an elliptic curve form an additive abelian group. We shall define the group law geometrically. \\
 Let $P = (x_p, y_p), Q = (x_q, y_q)$. A line through $P$ and $Q$ intersects $E$ at a third point, $R = (x_r,y_r)$. We define $P + Q := (x_r,-y_r)$. Pictorally, this looks like \\
 \includegraphics[width=6in]{grouplaw.png}
-The group law can also be defined in terms of algebraic formulas, which can be found in [SIL08]. %[1] is silverman%
+The group law can also be defined in terms of algebraic formulas, which can be found in [SIL08, III.2].
 
 \subsection{Notation}
 \begin{itemize}
@@ -160,7 +160,7 @@ The proof of this is mainly using the fundamental theorem of abelian groups, and
 \begin{theorem}
 Two elliptic curves $E_1(\mathbb F)$ and $E_2(\mathbb F)$ are isomorphic over $\overline{\mathbb F} \iff j(E_1) = j(E_2)$. Furthermore, $\forall j_0 \in \overline{\mathbb F}$, $\exists$ an elliptic curve $E(\mathbb F)$ such that $j(E) = j_0$.
 \end{theorem}
-The proof requires some lengthy algebraic manipulation, which can be found in [SIL08]. As a consequence of the proof, for any $j \in \overline{\mathbb F}$, we can define an canonical elliptic curve $E$ associated with this j-invariant. We see that 
+The proof requires some lengthy algebraic manipulation, which can be found in [SIL08, III.1]. As a consequence of the proof, for any $j \in \overline{\mathbb F}$, we can define an canonical elliptic curve $E$ associated with this j-invariant. We see that 
 
   
 \begin{flalign} 
@@ -319,10 +319,7 @@ The Weil/Tate Pairing is efficiently computable when $k$ is small, as computing 
  
  
  
-\noindent As a result from the theory of complex multiplication, the above algorithm will always succeed provided that such a curve $E$ exists and will be efficient if $D$ is not too large [SUTH15]. A slight subtlety arises if $j = 0$ or $j = 1728$. If $j = 0$, then there are $6$ classes of curves, corresponding to sextic twists of $E$ by $1, \zeta, \zeta^2, \dots, \zeta^5$, for $\zeta$, a primitive root of unity in $\mathbb F_p$. If $j = 1728$, then there are $4$ classes of curves, corresponding to quartic twists of $E$ by $1, \zeta, \dots \zeta^3$, for $\zeta$, a primitive root of unity in $\mathbb F_p$. If a curve $E$ exists, then one of these curves will satisfy the conditions of the algorithm. TODO NEED SOURCE
-\\ 
-Rationale for this algorithm: 
-
+\noindent As a result from the theory of complex multiplication, the above algorithm will always succeed provided that such a curve $E$ exists and will be efficient if $D$ is not too large [SUTH15]. A slight subtlety arises if $j = 0$ or $j = 1728$. If $j = 0$, then there are $6$ classes of curves, corresponding to sextic twists of $E$ by $1, \zeta, \zeta^2, \dots, \zeta^5$, for $\zeta$, a primitive root of unity in $\mathbb F_p$. If $j = 1728$, then there are $4$ classes of curves, corresponding to quartic twists of $E$ by $1, \zeta, \dots \zeta^3$, for $\zeta$, a primitive root of unity in $\mathbb F_p$. If a curve $E$ exists, then one of these curves will satisfy the conditions of the algorithm. [SIL08, III.10]
 \subsection{Cocks Pinch Method}
 
 We wish to construct a curve with a subgroup of size $r$ and embedding degree $k$. Suppose we also have chosen a CM discriminant $D$ such that $\legendre{D}{r} = 1$. The Cocks Pinch method finds a prime $p$ and the trace of Frobenius $t$ such that $\exists$ an elliptic curve $E$ over $\mathbb F_p$ with trace $t$, and a subgroup of size $r$ with embedding degree $k$. There are $3$ conditions on $p,t$:
