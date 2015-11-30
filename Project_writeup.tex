@@ -57,7 +57,7 @@
 
 \section{Introduction}
 
-In this section, we shall define key concepts needed for our report. We will prove some of the more important results, and cite a source otherwise.
+
 
 \subsection{Elliptic Curves} 
 For our project, we shall define an elliptic curve to be a curve of the form:
@@ -90,15 +90,17 @@ The group law can also be defined in terms of algebraic formulas, which can be f
 \item $[n]$ is the multiplication by $n$ map
 \end{itemize}
 
+\section{Background}
 
+In this section, we shall define key concepts needed for our report. We will prove some of the more important results, and cite a source otherwise.
 
 \subsection{Isogenies} 
 An isogeny of two elliptic curves $E_1$ and $E_2$ defined over a field $\mathbb F$ is a nonconstant morphism $\phi: E_1 \to E_2$, where $\phi$ is a group homomorphism from $E_1(\overline{\mathbb F}) \to E_2(\overline{\mathbb F})$. $E_1$ and $E_2$ are isomorphic if $\exists \phi_1: E_1 \to E_2$ and $\phi_2: E_2 \to E_1$, isogenies, such that $\phi_2 \circ \phi_1 =  $ Identity.
 
 \subsubsection{Separable and Inseparable Isogenies}
-Any isogeny $\phi$ can be expressed as $\phi(x,y) = (\frac{u(x)}{v(x)}, \frac{s(x)}{t(x)}y)$, where $u,v,s,t \in \mathbb F[x]$, and $\gcd(u,v) = \gcd(s,t) = 1$. [SUTH15] %[3] is mit reference
-An isogeny is separable if $(\frac{u}{v})' = 0$, and is inseparable otherwise. The degree of an isogeny is defined as $\deg(\phi) := \max(\deg(u), \deg(v))$. [SUTH15]
-For any separable isogeny $\phi$, $\deg(\phi) = \abs{ \ker \phi}$.
+Any isogeny $\phi$ can be expressed as $\phi(x,y) = (\frac{u(x)}{v(x)}, \frac{s(x)}{t(x)}y)$, where $u,v,s,t \in \mathbb F[x]$, and $\gcd(u,v) = \gcd(s,t) = 1$.
+An isogeny is separable if $(\frac{u}{v})' = 0$, and is inseparable otherwise. The degree of an isogeny is defined as $\deg(\phi) := \max(\deg(u), \deg(v))$.
+For any separable isogeny $\phi$, $\deg(\phi) = \abs{ \ker \phi}$. [SUTH15]
 
 \subsubsection{Dual isogenies}
 \begin{theorem}
@@ -144,13 +146,13 @@ The fixed field of $\phi_p$ is $\mathbb F_p$, and $1- \phi_p$ is separable (see 
 
 \bigskip
 
-
+\begin{comment}
 \begin{theorem} 
 If $K$ is a field of characteristic $0$ or does not divide $m$, then
 $ E[m] \simeq Z_{m} \oplus Z_{m}$.  
 \end{theorem} 
 The proof of this is mainly using the fundamental theorem of abelian groups, and analyzing the decomposition of the torsion group (TODO?) 
-
+\end{comment}
 
 
 \subsection{j-invariant} 
@@ -191,14 +193,14 @@ j(E) = 1728 \frac{4A^{3}}{4A^{3} + 27B^{2}}
 \end{equation}
 
 Note that the $j$ invariant is homogenous; scalings of the form from (5) will still leave $j$ constant. Given a $j$, then the canonical elliptic curve associated with this j-invariant will be 
-\end{comment}
+
 
 \subsubsection{Example}
 $E_1(\mathbb F)$ and $E_2(\mathbb F)$ can be isomorphic over $\overline{\mathbb F}$, but not over $\mathbb F$. As an example, consider the curves $E_1: y^{2} = x^{3} - 25x$, $E_2: y^{2} = x^{3} - 4x$ have $j=1728$. $\#E_1(\mathbb Q) = \infty$ because we can just take an infinite group with generator $(-4,6)$ but $\#E_2(\mathbb Q) < \infty$ because the only points on it $\infty, (2,0), (-2,0), (0,0)$ form a finite abelian group. \\
 The transformation $(x,y) \rightarrow (\mu^{2}x, \mu^{3}y)$, $\mu = \frac{\sqrt{10}}{2}$ establishes an isomorphism over $\mathbb Q(\sqrt{10})$, but no such isomorphism exists over $\mathbb Q$.
 
 From this example, we can see that we do not necessarily need the full closure $\overline{\mathbb F}$; we only needed $d \in \mathbb F$ such that $d= \mu^{2}$, which in this case was $\mathbb Q(\sqrt{10})$, which gives rise to the idea of quadratic twists. 
-
+\end{comment}
 \subsection{Twists} 
 Two curves $E_1(\mathbb F)$ and $E_2(\mathbb F)$ are {\it twists} if they are isomorphic over $\overline{\mathbb F}$ but not over $\mathbb F$.
 \subsubsection{Quadratic Twists}
@@ -218,7 +220,7 @@ Since $\mathbb F_p$ is a field, $\forall x \in \mathbb F_p$, $\exists x' \in \ma
 & = p + 1 + \sum_{x \in \mathbb F_p} {\legendre{d}{p} \legendre{d^2}{p} \legendre{x^3+Ax+B}{p}} = p + 1 - \sum_{x \in \mathbb F_p} {\legendre{x^3+Ax+B}{p}}
 \end{flalign*}
 \end{proof}
-
+\begin{comment}
 \subsection{The Complex Lattice}
 \begin{theorem} 
 Let $\omega_{1}, \omega_{2}$ be linearly independent points in $C$. Then define the lattice 
@@ -260,7 +262,7 @@ For curves defined on a field $K$, there is a homomorphism $K \rightarrow C$ if 
 Consider the case when our lattice $L = O_{D}$ where $D = \mathbb{Q}(\sqrt{-d})$ for some $d > 0$, where the basis elements will be $[1, \frac{1+\sqrt{-d}}{2}] $ or $[1, \sqrt{-d}]$ depending on whether $d$ is $\{3\}, \{1,2\} \mod 4$ respectively, which are quadratic integer fields. 
 
 Then define the Hilbert Class polynomial $H_{D} \in Z[X]$ that is the minimal polynomial that contains the $j(L)$ as a root. There are many ways to calculate this, but we won't get to that in this paper. Thus, we can define an elliptic curve based on a square free discriminant $D$.  
-
+\end{comment}
 \subsection{Pairings and Pairing-Friendly Curves}
 Let $G$ be an additive abelian group of order $p$, a prime, and let $G'$ be a multiplicative group of order $p$. A pairing is a bilinear map $e: G \times G \to G'$ satisfying:
 \begin{enumerate}
@@ -286,19 +288,7 @@ We do not need the full algebraic closure $\overline{\mathbb F_p}$ to determine 
 \noindent Therefore, the embedding degree $k$ is the smallest positive integer satisfying $p^k \equiv 1 \mod r$.
 
 \subsubsection{Pairing-Friendly Curves}
-The Weil/Tate Pairing is efficiently computable when $k$ is small, as computing the pairings requires computation in $\mathbb F_{p^k}$. A curve with efficiently computable pairings is {\it pairing-friendly}. Pairing-friendly curves are rare. In general, if $r \approx p$, then $\Pr[$pairing-friendly curve$] = O(\frac{\log^3 M}{M})$
-
-\section{Motivations and Applications} 
-
-\subsection{Discrete Log Problem}
-In the discrete log problem, we are given any group $G$, with a base generator element $P$, with a ciphertext $Q$, where the problem involves finding $k$ such that $P^{k} = Q$ in $G$. \\ \\
-For elliptic curves, this becomes using a base point $P$ with degree $N$ as a generator, in a finite field $F_{p}$, which will create a cyclic group. However, note that by the theorem of finite abelian groups, this cyclic group will be isomorphic to a direct sum of cyclic groups based on the prime factorization of $N$
-
-\subsubsection{Pohlig-Hellman Attack}
-For an element $P$, assume it has order $N$ in the group $G$. Then the prime factorization of $N$, is important to the adversary; i.e. if 
-$$ N = \prod_{i}q_{i}^{e_{i}} $$ then if we need to find $k$ such that $P^{k} = Q$, then all we need to do is find $k$ in its base $q_{1}, q_{2},...$ expansions and then construct $k$ using the Chinese Remainder Method. We can do so on each $q_{i}$ by successively iteration. Thus the difficulty of attacking this problem relies on the largest prime dividing $N$. 
-
-This implies that we will need to find elliptic curves that have large-prime order torsion groups. 
+The Weil/Tate Pairing is efficiently computable when $k$ is small, as computing the pairings requires computation in $\mathbb F_{p^k}$. A curve with efficiently computable pairings is {\it pairing-friendly}. Pairing-friendly curves are rare. In general, if $r \approx p$, then $\Pr[$pairing-friendly curve$] = O(\frac{\log^3 M}{M})$. [IM98]
 
 
 
@@ -329,7 +319,7 @@ This implies that we will need to find elliptic curves that have large-prime ord
  
  
  
-\noindent The above algorithm will always succeed provided that such a curve $E$ exists and $D$ is not too large. A slight subtlety arises if $j = 0$ or $j = 1728$. If $j = 0$, then there are $6$ classes of curves, corresponding to sextic twists of $E$ by $1, \zeta, \zeta^2, \dots, \zeta^5$, for $\zeta$ a primitive root of unity in $\mathbb F_p$. If $j = 1728$, then there are $4$ classes of curves, corresponding to quartic twists of $E$ by $1, \zeta, \dots \zeta^3$, for $\zeta$ a primitive root of unity in $\mathbb F_p$. If a curve $E$ exists, then one of these curves will satisfy the conditions of the algorithm. TODO NEED SOURCE
+\noindent As a result from the theory of complex multiplication, the above algorithm will always succeed provided that such a curve $E$ exists and will be efficient if $D$ is not too large [SUTH15]. A slight subtlety arises if $j = 0$ or $j = 1728$. If $j = 0$, then there are $6$ classes of curves, corresponding to sextic twists of $E$ by $1, \zeta, \zeta^2, \dots, \zeta^5$, for $\zeta$, a primitive root of unity in $\mathbb F_p$. If $j = 1728$, then there are $4$ classes of curves, corresponding to quartic twists of $E$ by $1, \zeta, \dots \zeta^3$, for $\zeta$, a primitive root of unity in $\mathbb F_p$. If a curve $E$ exists, then one of these curves will satisfy the conditions of the algorithm. TODO NEED SOURCE
 \\ 
 Rationale for this algorithm: 
 
@@ -360,12 +350,28 @@ $p = \frac{(t^2 - f^2 D)}{4}$ \\
  \end{algorithm}
  \bigskip 
  
- If the algorithm succeeds, we can use the CM method to construct the desired elliptic curve $E$.
+\noindent If the algorithm succeeds, we can use the CM method to construct the desired elliptic curve $E$, provided that $E$ exists. We see that $\frac{t^2}{4} \leq \frac{t^2 - f^2 D}{4} = p^2 \implies t \leq 2 \sqrt p $ since $ D < 0$. As part of the proof of the CM method [SUTH15], a curve $E$ with trace $t$ exists if (1) is satisfied, $t \leq 2 \sqrt p$, and $t \not \equiv 0 \mod p$. The last equation is satisfied since $t > 0$ and $p > t$. Therefore, $E$ exists.
 
 
 
 \subsection{Dupont Enge Morain Method}
 
+\section{Applications} 
+
+
+\subsection{Elliptic Curve Discrete Logarithm Problem}
+The Elliptic Curve Discrete Logarithm Problem (ECDLP) is formalized as follows:
+Given two points $P,Q$, find an integer $k$ such that $kP = Q$.
+
+Currently, the fastest known method for solving ECDLP is Pollard's $\rho$ method, which runs in $O(\sqrt p)$ time.
+
+\subsubsection{Pohlig-Hellman Method}
+Suppose $N = \#E(\mathbb F_p)$, and write $ N = \prod_{i}q_{i}^{e_{i}}$ as a product of primes. To determine $k$, all we need to do is find $k \mod q^{e_i}_i$ and then construct $k$ using the Chinese Remainder theorem. This is the main idea behind the Pohlig-Hellman Method, which is efficient provided that the prime factors of $N$ are small. [WASH08]
+
+
+\subsubsection{MOV attack}
+
+The Menezes-Okamoto-Vanstone (MOV) attack relies on using pairings to solve the ECDLP. The idea behind the attack is to map the DLP on $E$ to the DLP in $\mathbb F_{p^k}$, where $k$ is the embedding degree, and then use the index calculus method to solve the DLP in subexponential time. This attack is efficient provided that $k$ is small. However, elliptic curves generally have large embedding degree with respect to any large subgroup, so this attack is only useful against pairing-friendly elliptic curves.
 
 
 
