@@ -1,0 +1,104 @@
+\documentclass[12pt,twoside]{article}
+
+%\usepackage{amsthm}%
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumerate}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[]{algorithm2e}
+
+\newenvironment{proof}{\noindent{\bf Proof:} \hspace*{1mm}}{
+	\hspace*{\fill} $\Box$ }
+\newenvironment{proof_of}[1]{\noindent {\bf Proof of #1:}
+	\hspace*{1mm}}{\hspace*{\fill} $\Box$ }
+\newenvironment{proof_claim}{\begin{quotation} \noindent}{
+	\hspace*{\fill} $\diamond$ \end{quotation}}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{lemma}[thm]{Lemma}
+
+\newcommand{\mbf}{\mathbf}
+\newcommand{\mrm}{\mathrm}
+
+\newenvironment{centered}[0]{%
+  \begin{list}{}{%
+    \setlength{\topsep}{0pt}%
+    \setlength{\leftmargin}{.25in}%
+    \setlength{\rightmargin}{.25in}%
+    \setlength{\listparindent}{\parindent}%
+    \setlength{\itemindent}{\parindent}%
+    \setlength{\parsep}{\parskip}%
+  }
+  \item[]}{\end{list}}
+\newcommand\abs[1]{\left|#1\right|}
+\newcommand\given[1][]{\:#1\vert\:}
+\newcommand{\legendre}[2]{\genfrac{(}{)}{}{}{#1}{#2}}
+\setcounter{tocdepth}{1}
+\newtheorem{theorem}{Theorem}
+
+
+
+\title{Constructing Pairing-Friendly Elliptic Curves }
+\date{\today}
+\author{ Peter Manohar, Xingyou Song} 
+
+\begin{document}
+
+
+
+
+\subsection{The Complex Lattice}
+\begin{theorem} 
+Let $\omega_{1}, \omega_{2}$ be linearly independent points in $C$. Then define the lattice 
+$$ L = Z\omega_{1} + Z \omega_{2}$$ Then there exists an elliptic curve that is isomorphic to $\mathbb{C}/ L$. 
+\end{theorem}
+Define $G_{k}(L) = \sum_{\omega \in L}\omega^{-k}$. Then define the Weierstrass $\wp (z) $ function as follows: 
+
+\begin{equation} 
+\wp(z) = \frac{1}{z^{2}} + \sum_{\omega \in L}\left(\frac{1}{(z-\omega)^{2}} - \frac{1}{\omega^{2}}\right) 
+\end{equation}  
+Then this function can easily be shown, by applications of complex analysis, to be convergent and meromorphic, as well as periodic. Then the derivative $\wp(z)$ is 
+\begin{equation} 
+\wp ' (z) = -2 \sum_{\omega \in L} \frac{1}{(z- \omega)^{2}} 
+\end{equation} 
+
+Now we have a isomorphism from the additive group on $\mathbb{C}/L$ to the the group of elliptic points on $E(\mathbb{C})$, by the map $$z \rightarrow ( \wp(z), \wp' (z)), \> \> \> \> \> 0 \rightarrow O $$ with $E$ being defined as 
+\begin{equation} 
+E: y^{2} = 4x^{3} - g_{2}x - g_{3} 
+\end{equation} 
+where $g_{2} = 60G_{4}, g_{3} = 140G_{6}$  
+Note that the periodicity will give: 
+
+\begin{equation} 
+(\wp(z_{1}), \wp'(z_{1})) \oplus (\wp(z_{2}), \wp'(z_{2})) = (\wp(z_{1} + z_{2}), \wp'(z_{1} + z_{2})) 
+\end{equation} which gives rise to the corresponding group law on elliptic curves. 
+
+Now we relate the $j$-invariant on curves to the $j-$function of a complex lattice. First, let rescale our lattice $L$ to $Z\tau + Z$ where $\tau = \frac{w_{1}}{w_{2}}$. Then the j-invariant related to the lattice parameter is 
+\begin{equation}
+j(\tau) = 1728 \frac{g_{2}^{3}}{g_{2}^{3} - 27 g_{3}^{2}} 
+\end{equation} 
+ 
+ 
+The proof of all of this we won't go into detail in this paper, but this gives rise to the relationship between the complex lattice and isogenies, mainly integer endomorphisms $[m]$ give rise to $ z \rightarrow mz$, and for multiplication by a complex number $\beta$, we have $z \rightarrow \beta z$, which is defined when $\beta L \in L$. A key theorem in [] is that 
+\begin{equation}
+End(E) \cong \{ \beta \in C | \beta L \subseteq L \} 
+\end{equation}  
+
+
+For curves defined on a field $K$, there is a homomorphism $K \rightarrow C$ if we linearly map the finite basis elements of $K$, $\alpha_{1}, ...,\alpha_{n}$ respectively to any algebraically independent set of elements in $\mathbb{C}$, $\tau_{1},..., \tau_{n}$, so we can regard $E(K)$ as a curve in $\mathbb{C}$.  
+
+\subsubsection{Using Quadratic Lattices }
+Consider the case when our lattice $L = O_{D}$ where $D = \mathbb{Q}(\sqrt{-d})$ for some $d > 0$, where the basis elements will be $[1, \frac{1+\sqrt{-d}}{2}] $ or $[1, \sqrt{-d}]$ depending on whether $d$ is $\{3\}, \{1,2\} \mod 4$ respectively, which are quadratic integer fields. 
+
+Then define the Hilbert Class polynomial $H_{D} \in Z[X]$ that is the minimal polynomial that contains the $j(L)$ as a root. There are many ways to calculate this, but we won't get to that in this paper. Thus, we can define an elliptic curve based on a square free discriminant $D$.  
+
+
+
+
+\bibliographystyle{alpha} 
+\bibliography{references}
+\end{document}
