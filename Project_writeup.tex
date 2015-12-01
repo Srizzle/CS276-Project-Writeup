@@ -50,7 +50,7 @@
 
 \maketitle
 
-\abstract{The goal of this report is to....
+\abstract{This report covers some of the fundamental aspects of elliptic curve construction. Specifically, we will focus on the Cocks Pinch and Dupont Enge Morain methods for curve construction. We start by giving an overview of important concepts about elliptic curves needed for understanding these two methods, and then we will explain and compare the two algorithms. Finally, we explore some of the applications of pairing-friendly curves to cryptography. 
 }
 
 \tableofcontents
@@ -333,7 +333,7 @@ We see that we only need to satisfy the above $3$ conditions for $p,t$. To do th
  
 \begin{algorithm}[H]
  \KwIn{$k$, embedding degree, $r$, size of subgroup, $D$, CM discriminant with $\legendre{D}{r} = 1$}
- \KwOut{$p$, a prime, and $t$ a trace of Frobenius}
+ \KwOut{$p$, prime, $t$, trace of Frobenius}
 $a := 2^{-1} (g+1) \mod r$ (as integers) \\
 $f = \frac{2(a-1)}{d}$ (as integers where $d \equiv \sqrt D \mod r$) \\
 $t := 2a$ \\
@@ -352,6 +352,27 @@ $p = \frac{(t^2 - f^2 D)}{4}$ \\
 
 
 \subsection{Dupont Enge Morain Method}
+
+As is the case in the Cocks Pinch method, we still need to find parameters $k,r,D,p,t$ satisfying the three conditions. The main idea behind the Dupont Enge Morain (DEM) Method is to fix an embedding degree $k$ and simultaneously compute the prime $r$ and $D$ using resultants. We define the resultant of two polynomials $f(x),g(x) \in \mathbb F[x]$ as 
+\begin{flalign*}
+{\rm Res}(f,g) = \prod (r_f-r_g)
+\end{flalign*}
+where $r_f$ and $r_g$ are the roots of $f(x)$ and $g(x)$ in $\overline{\mathbb F}$. From the definition, it is clear that Res$(f,g) = 0 \iff f$ and $g$ have a common root in $\overline{\mathbb F}$. We can replace condition (3) of the Cocks Pinch method with $r \Big | \Phi_k(q) \iff r \Big | \Phi_k(t-1)$ (if condition 2 also holds), where $\Phi_k(x)$ is the $k$th cyclotomic polynomial. Suppose that $-f^2 D + (t-2)^2 \equiv 0 \mod r$. Then $0 \equiv -f^2 D + t^2 - 4t + 4 \equiv 4p - 4t + 4 \equiv 4(p+1-t) \mod r \implies p+1-t \equiv 0 \mod r$ since $\gcd(4,r) = 1$, and we can assume that $r \ne 2$. If we can find $a \in \mathbb Z$ such that $r =  $ Res$(\Phi_k(x-1), a+(x-2)^2)$ is a prime, then Res$(\Phi_k(x-1), a+(x-2)^2) \equiv 0 \mod r \implies \Phi_k(x-1)$ and $a+(x-2)^2$ have a common root in $\overline{\mathbb F_r}$ so that $g(x)  = \gcd(\Phi_k(x-1), a+(x-2)^2) \in \mathbb F_r[x]$ has a root in $\overline{\mathbb F_r}$. As it turns out, $g(x)$ will have a root in $\mathbb F_r$. [TAX10] If we let $t$ be this root, then we see that $\Phi_k(t-1) \equiv 0 \mod r$ and that $a + (t-2)^2 \equiv 0 \mod r$. If $\exists i \in \mathbb Z^+$ such that $p = \frac{(t+ir)^2 + a}{4}$ is a prime, then $p \equiv \frac{t^2 + a}{4} \mod r$ so that $p+1-t \equiv 0 \mod r$ by an earlier argument. Letting $-f^2 D = a$, we see that the three conditions are satisfied, and therefore we can use the CM method to construct the desired elliptic curve $E$. By the same argument used in the Cocks Pinch method, we see that $| t | \leq 2 \sqrt p$. The algorithm is given below in pseudocode:
+
+\begin{algorithm}[H]
+\KwIn{$k$, embedding degree}
+\KwOut{$r$, subgroup size,$D$, CM discriminant, $p$, prime, $t$, trace of Frobenius}
+$a:= $random integer with small squarefree part \\
+\While {$r$ is not prime}{
+$r = \text{Res}(\Phi_k(x-1), a+(x-2)^2$}
+$D := $ squarefree part of $a$ \\
+$g(x) = \gcd(\Phi_k(x-1), a+(x-2)^2)$ \\
+$t := $any root of $g(x) \in \mathbb F_r$.
+\While {$p$ is not prime}{$p = \frac{(t+ir)^2 + a}{4}$ for some $i \in \mathbb Z^+$} 
+\Return{$r,D,p,t$}
+\end{algorithm}
+
+
 
 \section{Applications} 
 
