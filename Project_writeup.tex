@@ -220,7 +220,7 @@ Since $\mathbb F_p$ is a field, $\forall x \in \mathbb F_p$, $\exists x' \in \ma
 & = p + 1 + \sum_{x \in \mathbb F_p} {\legendre{d}{p} \legendre{d^2}{p} \legendre{x^3+Ax+B}{p}} = p + 1 - \sum_{x \in \mathbb F_p} {\legendre{x^3+Ax+B}{p}}
 \end{flalign*}
 \end{proof}
-\begin{comment}
+
 \subsection{The Complex Lattice}
 \begin{theorem} 
 Let $\omega_{1}, \omega_{2}$ be linearly independent points in $C$. Then define the lattice 
@@ -245,24 +245,50 @@ Note that the periodicity will give:
 
 \begin{equation} 
 (\wp(z_{1}), \wp'(z_{1})) \oplus (\wp(z_{2}), \wp'(z_{2})) = (\wp(z_{1} + z_{2}), \wp'(z_{1} + z_{2})) 
-\end{equation} which gives rise to the corresponding group law on elliptic curves. 
-
-Now we relate the $j$-invariant on curves to the $j-$function of a complex lattice. First, let rescale our lattice $L$ to $Z\tau + Z$ where $\tau = \frac{w_{1}}{w_{2}}$. First, define $q = e^{2\pi \i \tau}$. Then the j-invariant related to the lattice parameter is 
+\end{equation} which gives rise to the corresponding group law on elliptic curves. \\ \\
+\noindent Now we relate the $j$-invariant on curves to the $j-$function of a complex lattice. First, let rescale our lattice $L$ to $Z\tau + Z$ where $\tau = \frac{w_{1}}{w_{2}}$. Then the j-invariant related to the lattice parameter is 
 \begin{equation}
 j(\tau) = 1728 \frac{g_{2}^{3}}{g_{2}^{3} - 27 g_{3}^{2}} 
 \end{equation} 
  
  
-The proof of all of this we won't go into detail in this paper, but this gives rise to the relationship between the complex lattice and isogenies, mainly integer endomorphisms $[m]$ give rise to $ z \rightarrow mz$, and for multiplication by a complex number $c$, we have $z \rightarrow cz$, which will induce a endormorphism on the corresponding elliptic curve.   
+\noindent The proof of all of this we won't go into detail in this paper, but this gives rise to the relationship between the complex lattice and isogenies, mainly integer endomorphisms $[m]$ give rise to $ z \rightarrow mz$, and for multiplication by a complex number $\beta$, we have $z \rightarrow \beta z$, which is defined when $\beta L \in L$. A key theorem is that 
+\begin{equation}
+End(E) \cong \{ \beta \in C | \beta L \subseteq L \} 
+\end{equation}  
+This can be proved by taking the limit of the action of the endomorphism by approaching a lattice point in [WASH08].
+\\ \\
+\noindent For curves defined on a field $K$, there is a homomorphism $K \rightarrow C$ if we linearly map the finite basis elements of $K$, $\alpha_{1}, ...,\alpha_{n}$ respectively to any algebraically independent set of elements in $\mathbb{C}$, $\tau_{1},..., \tau_{n}$, so we can regard $E(K)$ as a curve in $\mathbb{C}$.  
+
+\subsubsection{Using Quadratic Lattices}
+\begin{theorem}
+The elements $\beta$ in the endomorphism ring are algebraic integers that lie in some quadratic field.
+\end{theorem}
+\begin{proof}
+Note that by the theorem in (6), there exist integers $a,b,c,d$ such that 
+\begin{equation}
+\beta \omega_{1} = a\omega_{1} + b \omega_{2} \> \> \> \> \> \> \beta \omega_{2} = c\omega_{1} + d \omega_{2}
+\end{equation}
+Since this becomes a linear transformation, we can re-write $\beta$ in a qudratic, i.e. 
+\begin{equation}
+\beta^{2} -  \beta(a+d) + (ad-bc) = 0
+\end{equation}
+which implies $\beta$ is an quadratic algebraic integer. 
+\end{proof}
+\\
 
 
-For curves defined on a field $K$, there is a homomorphism $K \rightarrow C$ if we linearly map the finite basis elements of $K$, $\alpha_{1}, ...,\alpha_{n}$ respectively to any algebraically independent set of elements in $\mathbb{C}$, $\tau_{1},..., \tau_{n}$, so we can regard $E(K)$ as a curve in $\mathbb{C}$.  
+Such quadratic fields are defined by $Z[\delta]$, of the forms $Z[\frac{1 + \sqrt{-D}}{2}]$ if $D \equiv 3 \mod 4$  or $Z[\sqrt{-D}]$ if $D \equiv 1,2 \mod 4$ where $D$ is squarefree.
+\\ \\ 
 
-\subsubsection{Using Quadratic Lattices }
-Consider the case when our lattice $L = O_{D}$ where $D = \mathbb{Q}(\sqrt{-d})$ for some $d > 0$, where the basis elements will be $[1, \frac{1+\sqrt{-d}}{2}] $ or $[1, \sqrt{-d}]$ depending on whether $d$ is $\{3\}, \{1,2\} \mod 4$ respectively, which are quadratic integer fields. 
+\noindent \textbf{Definition:} An \textit{order} in an imaginary qudratic field is a ring $R$ that is contained in the field, which will have have the form $Z[f\delta]$.
+\\ \\
+\noindent It is then proved that all such $\beta$ are in the same order of some quadratic field in [WASH08], or in other words, elliptic curves in $\mathbb{C}$ have endomorphism rings isomorphic to $R$ in some quadratic field.  
+\\ \\ 
+\noindent Now to construct a curve of size $N$ in $\mathbb{F}_{p}$, we have that $t = p+1 - N$ due to Hasse's theorem, and find $D$ to be square-free part of  $t^{2} -4p$. We will then find an integer polynomial $H_{D}(x)$ such that the roots will be j-invariants of curves with complex multiplication defined in the actual quadratic field. To do so requires taking Galois conjugates of elements in the field, depicted in [WASH08]. The algorithm is defined in section 3. 
 
-Then define the Hilbert Class polynomial $H_{D} \in Z[X]$ that is the minimal polynomial that contains the $j(L)$ as a root. There are many ways to calculate this, but we won't get to that in this paper. Thus, we can define an elliptic curve based on a square free discriminant $D$.  
-\end{comment}
+
+
 \subsection{Pairings and Pairing-Friendly Curves}
 Let $G$ be an additive abelian group of order $p$, a prime, and let $G'$ be a multiplicative group of order $p$. A pairing is a bilinear map $e: G \times G \to G'$ satisfying:
 \begin{enumerate}
