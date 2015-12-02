@@ -50,7 +50,7 @@
 
 \maketitle
 
-\abstract{This report covers some of the fundamental aspects of elliptic curve construction. Specifically, we will focus on the Cocks Pinch and Dupont Enge Morain methods for curve construction. We start by giving an overview of important concepts about elliptic curves needed for understanding these two methods, and then we will explain and compare the two algorithms. Finally, we explore some of the applications of pairing-friendly curves to cryptography. 
+\abstract{This report covers some of the fundamental aspects of elliptic curve construction. Specifically, we will focus on the Cocks Pinch and Dupont Enge Morain methods for curve construction. We start by giving an overview of important concepts about elliptic curves needed for understanding these two methods, and then we will state and explain the two algorithms. Finally, we explore some of the applications of elliptic curves to cryptography. 
 }
 
 \tableofcontents
@@ -220,75 +220,6 @@ Since $\mathbb F_p$ is a field, $\forall x \in \mathbb F_p$, $\exists x' \in \ma
 & = p + 1 + \sum_{x \in \mathbb F_p} {\legendre{d}{p} \legendre{d^2}{p} \legendre{x^3+Ax+B}{p}} = p + 1 - \sum_{x \in \mathbb F_p} {\legendre{x^3+Ax+B}{p}}
 \end{flalign*}
 \end{proof}
-
-\subsection{The Complex Lattice}
-\begin{theorem} 
-Let $\omega_{1}, \omega_{2}$ be linearly independent points in $C$. Then define the lattice 
-$$ L = Z\omega_{1} + Z \omega_{2}$$ Then there exists an elliptic curve that is isomorphic to $\mathbb{C}/ L$. 
-\end{theorem}
-Define $G_{k}(L) = \sum_{\omega \in L}\omega^{-k}$. Then define the Weierstrass $\wp (z) $ function as follows: 
-
-\begin{equation} 
-\wp(z) = \frac{1}{z^{2}} + \sum_{\omega \in L}\left(\frac{1}{(z-\omega)^{2}} - \frac{1}{\omega^{2}}\right) 
-\end{equation}  
-Then this function can easily be shown, by applications of complex analysis, to be convergent and meromorphic, as well as periodic. Then the derivative $\wp(z)$ is 
-\begin{equation} 
-\wp ' (z) = -2 \sum_{\omega \in L} \frac{1}{(z- \omega)^{2}} 
-\end{equation} 
-
-Now we have a isomorphism from the additive group on $\mathbb{C}/L$ to the the group of elliptic points on $E(\mathbb{C})$, by the map $$z \rightarrow ( \wp(z), \wp' (z)), \> \> \> \> \> 0 \rightarrow O $$ with $E$ being defined as 
-\begin{equation} 
-E: y^{2} = 4x^{3} - g_{2}x - g_{3} 
-\end{equation} 
-where $g_{2} = 60G_{4}, g_{3} = 140G_{6}$  
-Note that the periodicity will give: 
-
-\begin{equation} 
-(\wp(z_{1}), \wp'(z_{1})) \oplus (\wp(z_{2}), \wp'(z_{2})) = (\wp(z_{1} + z_{2}), \wp'(z_{1} + z_{2})) 
-\end{equation} which gives rise to the corresponding group law on elliptic curves. \\ \\
-\noindent Now we relate the $j$-invariant on curves to the $j-$function of a complex lattice. First, let rescale our lattice $L$ to $Z\tau + Z$ where $\tau = \frac{w_{1}}{w_{2}}$. Then the j-invariant related to the lattice parameter is 
-\begin{equation}
-j(\tau) = 1728 \frac{g_{2}^{3}}{g_{2}^{3} - 27 g_{3}^{2}} 
-\end{equation} 
- 
- 
-\noindent The proof of all of this we won't go into detail in this paper, but this gives rise to the relationship between the complex lattice and isogenies, mainly integer endomorphisms $[m]$ give rise to $ z \rightarrow mz$, and for multiplication by a complex number $\beta$, we have $z \rightarrow \beta z$, which is defined when $\beta L \in L$. A key theorem is that 
-\begin{equation}
-End(E) \cong \{ \beta \in C | \beta L \subseteq L \} 
-\end{equation}  
-This can be proved by taking the limit of the action of the endomorphism by approaching a lattice point in [WASH08].
-\\ \\
-\noindent For curves defined on a field $K$, there is a homomorphism $K \rightarrow C$ if we linearly map the finite basis elements of $K$, $\alpha_{1}, ...,\alpha_{n}$ respectively to any algebraically independent set of elements in $\mathbb{C}$, $\tau_{1},..., \tau_{n}$, so we can regard $E(K)$ as a curve in $\mathbb{C}$.  
-
-\subsubsection{Using Quadratic Lattices}
-\begin{theorem}
-The elements $\beta$ in the endomorphism ring are algebraic integers that lie in some quadratic field.
-\end{theorem}
-\begin{proof}
-Note that by the theorem in (6), there exist integers $a,b,c,d$ such that 
-\begin{equation}
-\beta \omega_{1} = a\omega_{1} + b \omega_{2} \> \> \> \> \> \> \beta \omega_{2} = c\omega_{1} + d \omega_{2}
-\end{equation}
-Since this becomes a linear transformation, we can re-write $\beta$ in a qudratic, i.e. 
-\begin{equation}
-\beta^{2} -  \beta(a+d) + (ad-bc) = 0
-\end{equation}
-which implies $\beta$ is an quadratic algebraic integer. 
-\end{proof}
-\\
-
-
-Such quadratic fields are defined by $Z[\delta]$, of the forms $Z[\frac{1 + \sqrt{-D}}{2}]$ if $D \equiv 3 \mod 4$  or $Z[\sqrt{-D}]$ if $D \equiv 1,2 \mod 4$ where $D$ is squarefree.
-\\ \\ 
-
-\noindent \textbf{Definition:} An \textit{order} in an imaginary qudratic field is a ring $R$ that is contained in the field, which will have have the form $Z[f\delta]$.
-\\ \\
-\noindent It is then proved that all such $\beta$ are in the same order of some quadratic field in [WASH08], or in other words, elliptic curves in $\mathbb{C}$ have endomorphism rings isomorphic to $R$ in some quadratic field.  
-\\ \\ 
-\noindent Now to construct a curve of size $N$ in $\mathbb{F}_{p}$, we have that $t = p+1 - N$ due to Hasse's theorem, and find $D$ to be square-free part of  $t^{2} -4p$. We will then find an integer polynomial $H_{D}(x)$ such that the roots will be j-invariants of curves with complex multiplication defined in the actual quadratic field. To do so requires taking Galois conjugates of elements in the field, depicted in [WASH08]. The algorithm is defined in section 3. 
-
-
-
 \subsection{Pairings and Pairing-Friendly Curves}
 Let $G$ be an additive abelian group of order $p$, a prime, and let $G'$ be a multiplicative group of order $p$. A pairing is a bilinear map $e: G \times G \to G'$ satisfying:
 \begin{enumerate}
@@ -316,12 +247,93 @@ We do not need the full algebraic closure $\overline{\mathbb F_p}$ to determine 
 \subsubsection{Pairing-Friendly Curves}
 The Weil/Tate Pairing is efficiently computable when $k$ is small, as computing the pairings requires computation in $\mathbb F_{p^k}$. A curve with efficiently computable pairings is {\it pairing-friendly}. Pairing-friendly curves are rare. In general, if $r \approx p$, then $\Pr[$pairing-friendly curve$] = O(\frac{\log^3 p}{p})$. [IM98]
 
+\subsection{Ordinary Curves}
+
+{\bf Definition: } $E(\mathbb F_p)$ is ordinary if $\#E[p] = p$. If $\#E[p] \ne p$ ($\#E[p] = 1$) then $E(\mathbb F_p)$ is supersingular. \\
+
+
+\noindent For this project we are interested in constructing ordinary curves, as supersingular curves are vulnerable to attacks (since they have embedding degree $2$ over $\mathbb F_p$ for $p >= 5$). We will see that the curve generation algorithms we use only construct ordinary curves.
+
+\subsection{Complex Multiplication}
+\subsubsection{Complex Lattice}
+\begin{theorem} 
+Let $\omega_{1}, \omega_{2}$ be linearly independent points in $C$.  Define the lattice 
+$$ L = Z\omega_{1} + Z \omega_{2}$$ Then there exists an elliptic curve that is isomorphic to $\mathbb{C}/ L$. 
+\end{theorem}
+{\bf Proof Sketch:} \\
+
+\noindent The Weierstrass $\wp (z) $ function is: 
+
+\begin{equation} 
+\wp(z) = \frac{1}{z^{2}} + \sum_{\omega \in L}\left(\frac{1}{(z-\omega)^{2}} - \frac{1}{\omega^{2}}\right) 
+\end{equation}  
+$\wp(z)$ is convergent, doubly periodic with periods $\omega_1$ and $\omega_2$, and is holomorphic on $\mathbb C$ everywhere except on $L$. The derivative $\wp(z)$ is 
+\begin{equation} 
+\wp ' (z) = -2 \sum_{\omega \in L} \frac{1}{(z- \omega)^{2}} 
+\end{equation} 
+$\wp(z)$ gives an isomorphism from $\mathbb{C}/L$ to $E(\mathbb{C})$, by the map $$z \rightarrow ( \wp(z), \wp' (z)), \> \> \> \> \> 0 \rightarrow O $$ with $E$ being defined as 
+\begin{equation} 
+E: y^{2} = 4x^{3} - g_{2}x - g_{3} 
+\end{equation} 
+where $g_{2} = 60G_{4}, g_{3} = 140G_{6}$, and $G_{k}(L) = \sum_{\omega \in L}\omega^{-k}$ is the Eisenstein series of weight $k$.
+
+\noindent It can be shown that addition of points on $E(\mathbb C)$ corresponds to addition of points in $\mathbb C/L$. [SUTH15] Formally:
+
+\begin{equation} 
+(\wp(z_{1}), \wp'(z_{1})) + (\wp(z_{2}), \wp'(z_{2})) = (\wp(z_{1} + z_{2}), \wp'(z_{1} + z_{2})) 
+\end{equation} \\ \\
+\noindent  We can also relate the $j$-invariant on curves to the $j$-function of a complex lattice. First, observe that we can rescale our lattice $L$ to $Z\tau + Z$ where $\tau = \frac{w_{1}}{w_{2}}$, while preserving $\mathbb C/L$ as a group. The j-invariant of $L$ is
+\begin{equation}
+j(\tau) = 1728 \frac{g_{2}^{3}}{g_{2}^{3} - 27 g_{3}^{2}} 
+\end{equation} 
+
+ 
+\noindent The theorem states that every lattice $\mathbb C/L \cong E(\mathbb C)$ for some elliptic curve $E$. However, it turns out that the converse is also true. Namely, $E(\mathbb C) \cong \mathbb C/L$ for some lattice $L$. This establishes an isomorphism between the endomorphism rings of $E(\mathbb C)$ and $\mathbb C/L$. The endomorphism ring of $L$ is the set $\{ \beta \in C | \beta L \subseteq L \}$. Therefore, we see that
+\begin{equation}
+End(E) \cong \{ \beta \in C | \beta L \subseteq L \} 
+\end{equation}  
+where the endomorphism $[n]$ on $E$ corresponds to $z \mapsto nz$ on $L$. Furthermore, there are endomorphisms in $End(E)$ that correspond to multiplication by multiplying the lattice by complex numbers. [WASH08]
+\\ \\
+\noindent For curves defined on a field $\mathbb F$, there is a homomorphism $\mathbb F \rightarrow C$ if we linearly map the finite basis elements of $\mathbb F$, $\alpha_{1}, ...,\alpha_{n}$ respectively to any algebraically independent set of elements in $\mathbb{C}$, $\tau_{1},..., \tau_{n}$, so we can regard $E(\mathbb F)$ as a curve in $\mathbb{C}$.  
+
+\subsubsection{Endomorphism Rings}
+\begin{theorem}
+The elements $\beta$ in the endomorphism ring are algebraic integers that lie in some quadratic field $\mathbb Q[\sqrt D]$.
+\end{theorem}
+\begin{proof}
+Note that by theorem $6$, there exist integers $a,b,c,d$ such that 
+\begin{flalign*}
+& \beta \omega_{1} = a\omega_{1} + b \omega_{2} \> \> \> \> \> \> \beta \omega_{2} = c\omega_{1} + d \omega_{2} \\
+& \implies \begin{bmatrix} &\beta - a & -b \\ &-c &\beta - d\end{bmatrix} \begin{bmatrix}\omega_1 \\ \omega_2 \end{bmatrix} = 0 \implies \det \begin{bmatrix} &\beta - a & -b \\ &-c &\beta - d\end{bmatrix} = 0 \implies \beta^{2} -  \beta(a+d) + (ad-bc) = 0
+\end{flalign*}
+so $\beta$ is an algebraic integer in a quadratic field $\mathbb Q[\sqrt D]$ as it is the root of a polynomial with coefficients in $\mathbb Z$.
+\end{proof}
+\\ \\
+
+\noindent \textbf{Definition:} An \textit{order} in an imaginary quadratic field is a ring $R$ that is contained in the field.
+\\ \\
+It turns out that $R$ will have have the form $\mathbb Z[f \frac{1 + \sqrt{D}}{2}]$ if $D \equiv 1 \mod 4$ and $\mathbb Z[f \sqrt{D}]$ if $D \equiv 2, 3 \mod 4$, where $D$ is a squarefree integer.
+
+\noindent The endomorphism ring $End(E)$ is isomorphic to an order in a quadratic imaginary field [WASH08]. The discriminant of $End(E)$ is $f^2 D$ if $D \equiv 1 \mod 4$ and $f^2 4D$ if $D \equiv 2,3 \mod 4$.
+
+We state one final result that we will find useful.
+
+\begin{theorem}
+Let $E$ be an elliptic curve over $\mathbb Q$ with $End(E) \cong $ an order in $\mathbb Q[\sqrt D]$. Let $p$ be a prime such that $p \not \Big | \Delta(E)$. The following are equivalent:
+\begin{enumerate} 
+\item $E(\mathbb F_p)$ is ordinary
+\item $\legendre{D}{p} = 1$ and $H_D(X)$ splits in $\mathbb F_p[x]$
+\item $t^2 - 4p = f^2 D$, $t \not \equiv 0 \mod p$, for some integers $t$ and $f$
+\end{enumerate}
+\end{theorem}
 
 
 
 \section{Constructing Pairing-Friendly Curves} 
 
 \subsection{Complex Multiplication Method} 
+
+The CM method is an algorithm for constructing ordinary elliptic curves over $\mathbb F_p$ with $N$ points. To do this, we set $t = p+1 - N$, and let $D$ be the square-free part of $t^2-4p$. Assuming $t \not \equiv 0 \mod p$, $H_{D}(x)$ will split completely in $\mathbb F_p[x]$, since $D \equiv t^2 \mod p$. Therefore, we can pick a root $j_0$ to be the j-invariant of the curve. We can then use the canonical representative of an elliptic curve with j-invariant $j_0$ to construct a curve $E$. The curve we construct could either have $N = p+1 - t$ or $N= p+1 + t$, since the sign of $t$ does not matter when computing $D$. If $N = p+1 -t$, then the quadratic twist of the curve will have $N = p+1 -t$, as desired. By theorem 8, $E$ (and therefore its quadratic twist) must be ordinary. The algorithm is given below:
 
 \begin{algorithm}[H]
  \KwIn{$p$, a prime, and $N$ a positive integer}
@@ -345,7 +357,9 @@ The Weil/Tate Pairing is efficiently computable when $k$ is small, as computing 
  
  
  
-\noindent As a result from the theory of complex multiplication, the above algorithm will always succeed provided that such a curve $E$ exists and will be efficient if $D$ is not too large [SUTH15]. A slight subtlety arises if $j = 0$ or $j = 1728$. If $j = 0$, then there are $6$ classes of curves, corresponding to sextic twists of $E$ by $1, \zeta, \zeta^2, \dots, \zeta^5$, for $\zeta$, a primitive root of unity in $\mathbb F_p$. If $j = 1728$, then there are $4$ classes of curves, corresponding to quartic twists of $E$ by $1, \zeta, \dots \zeta^3$, for $\zeta$, a primitive root of unity in $\mathbb F_p$. If a curve $E$ exists, then one of these curves will satisfy the conditions of the algorithm. [SIL08, III.10]
+\noindent 
+
+ The above algorithm will always succeed provided that such a curve $E$ exists and will be efficient if $D$ is not too large [SUTH15]. A slight subtlety arises if $j = 0$ or $j = 1728$. If $j = 0$, then there are $6$ classes of curves, corresponding to sextic twists of $E$ by $1, \zeta, \zeta^2, \dots, \zeta^5$, for $\zeta$, a primitive root of unity in $\mathbb F_p$. If $j = 1728$, then there are $4$ classes of curves, corresponding to quartic twists of $E$ by $1, \zeta, \dots \zeta^3$, for $\zeta$, a primitive root of unity in $\mathbb F_p$. If a curve $E$ exists, then one of these curves will satisfy the conditions of the algorithm. [SIL08, III.10]
 \subsection{Cocks Pinch Method}
 
 We wish to construct a curve with a subgroup of size $r$ and embedding degree $k$. Suppose we also have chosen a CM discriminant $D$ such that $\legendre{D}{r} = 1$. The Cocks Pinch method finds a prime $p$ and the trace of Frobenius $t$ such that $\exists$ an elliptic curve $E$ over $\mathbb F_p$ with trace $t$, and a subgroup of size $r$ with embedding degree $k$. There are $3$ conditions on $p,t$:
@@ -355,7 +369,7 @@ We wish to construct a curve with a subgroup of size $r$ and embedding degree $k
 \item $p$ is a primitive $k$th root of unity mod $r$. As mentioned earlier, this condition is equivalent to $E$ having embedding degree $k$ with respect to the subgroup of size $r$.
 
 \end{enumerate}
-We see that we only need to satisfy the above $3$ conditions for $p,t$. To do this, we first choose $g$, a primitive $k$th root of unity mod $r$. We know that $t-1 \equiv p \equiv g \mod r$. Using (1), we see that $\frac{(t^2 - f^2 D)}{4} = p$. We can set $a= 2^{-1} (g+1) \mod r$ (as integers). Then, $2 a \equiv g+1 \equiv t \mod r \implies a^2 \equiv \frac{t^2}{4} \mod r$. We can also set $f_0 = \frac{2(a-1)}{\sqrt D} \mod r$. Suppose $p = \frac{(t^2 - f^2_0 D)}{4}$ is prime, and $t = 2a$. Then $p+1 - t \equiv a^2 - (a-1)^2 + 1 - t \equiv 2a -1 + 1 - t \equiv 0 \mod r$, so that (2) is satisfied, and (2) $\implies$ (3) since $t-1 \equiv g$. (1) is satisfied by construction of $p$, and so we have the desired output. If $p$ is not prime, then we can compute $p = \frac{(t^2 - f^2 D)}{4}$ for $f = f_0 + ir$, which gives new values for $p$ while preserving the above congruences mod $r$. If the algorithm succeeds in finding a prime $p$ then it outputs $p,t$, and will output $\bot$ if it fails. The algorithm is given below in pseudocode:
+If we satisfy the above $3$ conditions for $p,t$, we can apply the CM method to construct the desired curve $E$. First, we choose $g$, a primitive $k$th root of unity mod $r$. We know that $t-1 \equiv p \equiv g \mod r$. Using (1), we see that $\frac{(t^2 - f^2 D)}{4} = p$. We can set $a= 2^{-1} (g+1) \mod r$ (as integers). Then, $2 a \equiv g+1 \equiv t \mod r \implies a^2 \equiv \frac{t^2}{4} \mod r$. We can also set $f_0 = \frac{2(a-1)}{\sqrt D} \mod r$. Suppose $p = \frac{(t^2 - f^2_0 D)}{4}$ is prime, and $t = 2a$. Then $p+1 - t \equiv a^2 - (a-1)^2 + 1 - t \equiv 2a -1 + 1 - t \equiv 0 \mod r$, so that (2) is satisfied, and (2) $\implies$ (3) since $t-1 \equiv g$. (1) is satisfied by construction of $p$, and so we have the desired output. If $p$ is not prime, then we can compute $p = \frac{(t^2 - f^2 D)}{4}$ for $f = f_0 + ir$, which gives new values for $p$ while preserving the above congruences mod $r$. If the algorithm succeeds in finding a prime $p$ then it outputs $p,t$, and will output $\bot$ if it fails. The algorithm is given below in pseudocode:
  
 \begin{algorithm}[H]
  \KwIn{$k$, embedding degree, $r$, size of subgroup, $D$, CM discriminant with $\legendre{D}{r} = 1$}
@@ -398,7 +412,7 @@ $t := $any root of $g(x) \in \mathbb F_r$.
 \Return{$r,D,p,t$}
 \end{algorithm}
 
-
+The Cocks Pinch method and DEM method are both very similar. The Cocks Pinch method is preferable primarily because it allows the user to specify the subgroup size (which determines the security level of the curve), whereas the DEM method does not have this flexibility. 
 
 \section{Applications} 
 
