@@ -60,8 +60,6 @@
 
 \subsection{Elliptic Curves}
 
-
-
 For our project, we shall define an elliptic curve to be a curve of the form:
 \begin{equation}
 E: \ y^2 = x^3 + Ax + B,
@@ -225,7 +223,7 @@ Since $\mathbb F_p$ is a field, $\forall x \in \mathbb F_p$, $\exists x' \in \ma
 \subsection{Pairings and Pairing-Friendly Curves}
 Let $G$ be an additive abelian group of order $p$, a prime, and let $G'$ be a multiplicative group of order $p$. A pairing is a bilinear map $e: G \times G \to G'$ satisfying:
 \begin{enumerate}
-\item (bilinearity) $e(P_1 + P_2, P_3) = e(P_1,P_3)e(P_2,P_3) \ \forall P_1,P_2,P_3 \in G$
+\item (bilinearity) $e(P_1 + P_2, P_3) = e(P_1,P_3)e(P_2,P_3)$ and $e(P_1, P_2+P_3) = e(P_1,P_2)e(P_1,P_3)$ \\ $\forall P_1,P_2,P_3 \in G$
 \item (non-degeneracy) $e(P,P) \ne 1$, where $G = \mathopen{<} P \mathopen{>}$
 \item (computability) $e$ is efficiently computable
 \end{enumerate} [PAIR91]
@@ -242,7 +240,7 @@ Let $E[r] = \{ P \in E(\mathbb F_p) \given rP = O\}$ be the $r$-torsion group of
  
 We do not need the full algebraic closure $\overline{\mathbb F_p}$ to determine $\mu_r$. Instead, we can find a positive integer $k$ such that $\mu_r \subset \mathbb F_{p^k}$, that is, we require only a finite degree algebraic extension. We define the embedding degree $k$ of $E(\mathbb F_p)$ with respect to $r$ as $k:= [\mathbb F_p(\mu_r) : \mathbb F_p]$, the degree of the extension field. Therefore, we can regard $k$ as the smallest positive integer such that $\mu_r \subset \mathbb F_{p^k}$.
 \\ \\
-\noindent Alternatively, suppose that $k$ is the smallest positive integer such that $\mu_r \subset \mathbb F_{p^k}$.  $\mu_r \subset \mathbb F_{p^k} \iff r \Big |  \# \mathbb F^*_{p^k}$ (since multiplicative groups of finite fields are cyclic) $ \iff \gcd(r, p^k-1) = r \iff p^k-1 \equiv 0 \mod r \iff p$ is a primitive $k$th root of unity mod $r$ (since we picked $k$ to be minimal). 
+\noindent Alternatively, suppose that $k$ is the smallest positive integer such that $\mu_r \subset \mathbb F_{p^k}$.  $\mu_r \subset \mathbb F_{p^k} \iff r \Big |  \# \mathbb F^*_{p^k}$ (since multiplicative groups of finite fields are cyclic) $ \iff p^k-1 \equiv 0 \mod r \iff p$ is a primitive $k$th root of unity mod $r$ (since we picked $k$ to be minimal). 
 \\ \\
 \noindent Therefore, the embedding degree $k$ is the smallest positive integer satisfying $p^k \equiv 1 \mod r$.
 
@@ -292,7 +290,7 @@ j(\tau) = 1728 \frac{g_{2}^{3}}{g_{2}^{3} - 27 g_{3}^{2}} \, .
  
 \noindent The theorem states that every lattice $\mathbb C/L \cong E(\mathbb C)$ for some elliptic curve $E$. However, it turns out that the converse is also true. Namely, $E(\mathbb C) \cong \mathbb C/L$ for some lattice $L$. This establishes an isomorphism between the endomorphism rings of $E(\mathbb C)$ and $\mathbb C/L$. The endomorphism ring of $L$ is the set $\{ \beta \in C | \beta L \subseteq L \}$. Therefore, we see that
 \begin{equation}
-End(E) \cong \{ \beta \in C | \beta L \subseteq L \} 
+End(E) \cong \{ \beta \in \mathbb C | \beta L \subseteq L \} 
 \end{equation}  
 where the endomorphism $[n]$ on $E$ corresponds to $z \mapsto nz$ on $L$. Furthermore, there are endomorphisms in $End(E)$ that correspond to multiplication by multiplying the lattice by complex numbers. [WASH08]
 \\ \\
@@ -375,6 +373,7 @@ If we satisfy the above $3$ conditions for $p,t$, we can apply the CM method to 
 \begin{algorithm}[H]
  \KwIn{$k$, embedding degree, $r$, size of subgroup, $D$, CM discriminant with $\legendre{D}{r} = 1$}
  \KwOut{$p$, prime, $t$, trace of Frobenius}
+ $g:= $ primitive $k$th root of unity mod $r$ \\
 $a := 2^{-1} (g+1) \mod r$ (as integers) \\
 $f = \frac{2(a-1)}{d}$ (as integers where $d \equiv \sqrt D \mod r$) \\
 $t := 2a$ \\
