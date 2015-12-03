@@ -327,8 +327,9 @@ Let $E$ be an elliptic curve over $\mathbb Q$ with $End(E) \cong $ an order in $
 \item $t^2 - 4p = f^2 D$, $t \not \equiv 0 \mod p$, for some integers $t$ and $f$
 \end{enumerate}
 \end{theorem}
-[WASH08], [SUTH15].\\
-A careful inspection will show that all endomorphisms will be roots of the quadratic $x^{2} - tx + p = 0$, hence the rise of the name "discriminant" $t^{2} - 4p$. 
+[WASH08], [SUTH15].
+It turns out that all endomorphisms will be roots of the quadratic $x^{2} - tx + p = 0$, hence the rise of the name "discriminant" $t^{2} - 4p$, which corresponds to the discriminant of this polynomial.
+
 
 \section{Constructing Pairing-Friendly Curves} 
 
@@ -420,8 +421,8 @@ The Cocks-Pinch method and DEM method are both very similar. The Cocks-Pinch met
 \subsection{Elliptic Curve Discrete Logarithm Problem}
 The Elliptic Curve Discrete Logarithm Problem (ECDLP) is formalized as follows:
 Given two points $P,Q$, find an integer $k$ such that $kP = Q$.
-
-Currently, the fastest known method for solving ECDLP is Pollard's $\rho$ method, which runs in $O(\sqrt p)$ time.
+\\ \\
+\noindent Currently, the fastest known method for solving ECDLP is Pollard's $\rho$ method, which runs in $O(\sqrt p)$ time.
 
 \subsubsection{Pohlig-Hellman Method}
 Suppose $N = \#E(\mathbb F_p)$, and write $ N = \prod_{i}q_{i}^{e_{i}}$ as a product of primes. To determine $k$, all we need to do is find $k \mod q^{e_i}_i$ and then construct $k$ using the Chinese Remainder theorem. This is the main idea behind the Pohlig-Hellman Method, which is efficient provided that the prime factors of $N$ are small. [WASH08]
@@ -433,9 +434,9 @@ Suppose $N = \#E(\mathbb F_p)$, and write $ N = \prod_{i}q_{i}^{e_{i}}$ as a pro
 
 The Menezes-Okamoto-Vanstone (MOV) attack relies on using pairings to solve the ECDLP. The idea behind the attack is to map the DLP on $E$ to the DLP in $\mathbb F_{p^k}$, where $k$ is the embedding degree, and then use the index calculus method to solve the DLP in subexponential time. This attack is efficient provided that $k$ is small. However, elliptic curves generally have large embedding degree with respect to any large subgroup, so this attack is only useful against pairing-friendly elliptic curves.
 
-\section{Conclusion}
-
-
+\section{Concluding Remarks}
+In this project we have reviewed some of the important theory necessary to understanding the CM, Cocks-Pinch, and DEM methods for curve construction. For each method, we motivated the idea behind the algorithm, and then gave the algorithm and explained its correctness. Both the Cocks-Pinch and DEM methods can potentially be generalized to construct families of curves by finding functions that generate $p,t,r,k,D$ satisfying the three conditions. Pairings have many applications to cryptography, including identity-based encryption and 1-round 3-party Diffie Hellman key exchange.
+\newpage
 
 
 \bibliographystyle{alpha} 
