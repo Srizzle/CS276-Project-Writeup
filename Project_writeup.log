@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  2 DEC 2015 23:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  3 DEC 2015 10:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -470,7 +470,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 116--119
  []
 
 [3]
-Overfull \hbox (0.37039pt too wide) in paragraph at lines 161--162
+Overfull \hbox (0.37039pt too wide) in paragraph at lines 162--163
 []\OT1/cmr/m/it/10.95 Two el-lip-tic curves $\OML/cmm/m/it/10.95 E[]\OT1/cmr/m/
 n/10.95 (\U/msb/m/n/10.95 F\OT1/cmr/m/n/10.95 )$ \OT1/cmr/m/it/10.95 and $\OML/
 cmm/m/it/10.95 E[]\OT1/cmr/m/n/10.95 (\U/msb/m/n/10.95 F\OT1/cmr/m/n/10.95 )$ \
@@ -480,7 +480,7 @@ m/m/it/10.95 j\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 E[]\OT1/cmr/m/n/10.95 ) =
  []
 
 [4]
-Overfull \hbox (19.0459pt too wide) in paragraph at lines 226--227
+Overfull \hbox (19.0459pt too wide) in paragraph at lines 227--228
 []\OT1/cmr/m/n/10.95 (bilinearity) $\OML/cmm/m/it/10.95 e\OT1/cmr/m/n/10.95 (\O
 ML/cmm/m/it/10.95 P[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 P[]; P[]\OT1/cmr
 /m/n/10.95 ) = \OML/cmm/m/it/10.95 e\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 P[]
@@ -493,99 +493,90 @@ m/m/it/10.95 P[]; P[]\OT1/cmr/m/n/10.95 )$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 231--234
+Underfull \hbox (badness 10000) in paragraph at lines 232--235
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 231--234
+Underfull \hbox (badness 10000) in paragraph at lines 232--235
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--246
+Underfull \hbox (badness 10000) in paragraph at lines 242--249
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--246
+Underfull \hbox (badness 10000) in paragraph at lines 242--249
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 252--253
+Underfull \hbox (badness 10000) in paragraph at lines 255--256
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 263--264
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 284--286
+Underfull \hbox (badness 10000) in paragraph at lines 287--289
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 294--298
+Underfull \hbox (badness 10000) in paragraph at lines 312--316
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 309--313
+Underfull \hbox (badness 10000) in paragraph at lines 312--316
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 309--313
+Underfull \hbox (badness 10000) in paragraph at lines 317--320
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 314--317
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 318--321
+Underfull \hbox (badness 10000) in paragraph at lines 321--324
 
  []
 
 [7]
-Overfull \hbox (58.74939pt too wide) in paragraph at lines 340--352
+Overfull \hbox (58.74939pt too wide) in paragraph at lines 343--355
 $[]$ 
  []
 
 [8]
-Overfull \hbox (58.74939pt too wide) in paragraph at lines 374--388
+Overfull \hbox (58.74939pt too wide) in paragraph at lines 378--392
 $[]$ 
  []
 
 [9]
-Overfull \hbox (58.74939pt too wide) in paragraph at lines 403--414
+Overfull \hbox (58.74939pt too wide) in paragraph at lines 407--418
 $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 422--426
+Underfull \hbox (badness 10000) in paragraph at lines 426--430
 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [10]
-[11] (./Project_writeup.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 444.
+[10] [11] (./Project_writeup.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 448.
  [12]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 444.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 448.
  (./Project_writeup.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 444.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 444.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 448.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 448.
 Package rerunfilecheck Info: File `Project_writeup.out' has not changed.
 (rerunfilecheck)             Checksum: 1C70C87B650BFFEA5EE87ED0A437BEAE;263.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 444.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 448.
  ) 
 Here is how much of TeX's memory you used:
  7976 strings out of 493089
@@ -594,7 +585,7 @@ Here is how much of TeX's memory you used:
  11288 multiletter control sequences out of 15000+600000
  13358 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,14n,32p,1618b,384s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,14n,32p,1614b,465s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
@@ -612,7 +603,7 @@ ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
 15/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/201
 5/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive
 /2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Project_writeup.pdf (12 pages, 295708 bytes).
+Output written on Project_writeup.pdf (12 pages, 295387 bytes).
 PDF statistics:
  242 PDF objects out of 1000 (max. 8388607)
  207 compressed objects within 3 object streams

@@ -130,8 +130,7 @@ As endomorphisms,
 & \implies \phi + \hat \phi = 1+ [\deg(\phi)] - [\deg(1- \phi)] 
 \end{flalign*}
 \end{proof}
-\goodbreak %% CHANGE
-
+\\
 By the above theorem, we can now define trace$(\phi) := \phi + \hat \phi$.
 \begin{theorem}
 $\#E(\mathbb F_p) = p + 1 - t$, where $t = {\rm trace}(\phi_p)$
@@ -229,11 +228,11 @@ Let $G$ be an additive abelian group of order $p$, a prime, and let $G'$ be a mu
 \item (computability) $e$ is efficiently computable
 \end{enumerate} [PAIR91]
 \subsubsection{Weil and Tate Pairings}
-Let $E[r] = \{ P \in E(\overline{\mathbb F_p}) \given rP = O\}$ be the $r$-torsion group of $E(\mathbb F_p)$.
+Let $E[r] = \{ P \in E(\mathbb F_p) \given rP = O\}$ be the $r$-torsion group of $E(\mathbb F_p)$.
 \\ \\
 \noindent The Weil Pairing is a map $e_r: E[r] \times E[r] \to \mu_r$, where $\mu_{r}$ is the set of $r$th roots of unity in $\overline{\mathbb F_p}$. \\ 
 
-\noindent The Tate Pairing is a map: $\tau_r: E(\mathbb F_p)[r] \times E(\mathbb F_p)[r]/ rE(\mathbb F_p) \to \mu_r$, $\tau_r(P,Q) = e_r(P, R - \phi_p(R))$, where $R \in E(\overline{\mathbb F_p})$ satisfies $r R = Q$ and $E(\mathbb F_p)[r] = \{P \in E(\mathbb F_p) \given rP = O\}$.  [WASH08]
+\noindent The Tate Pairing is a map: $\tau_r: E(F_p)[r] \times E(F_p)[r]/ rE(F_p) \to \mu_r$, where $\tau_r(P,Q) = e_r(P, R - \phi_p(R))$, where $R$ satisfies $r R = Q$. [WASH08]
 
 
 
@@ -241,14 +240,12 @@ Let $E[r] = \{ P \in E(\overline{\mathbb F_p}) \given rP = O\}$ be the $r$-torsi
  
 We do not need the full algebraic closure $\overline{\mathbb F_p}$ to determine $\mu_r$. Instead, we can find a positive integer $k$ such that $\mu_r \subset \mathbb F_{p^k}$, that is, we require only a finite degree algebraic extension. We define the embedding degree $k$ of $E(\mathbb F_p)$ with respect to $r$ as $k:= [\mathbb F_p(\mu_r) : \mathbb F_p]$, the degree of the extension field. Therefore, we can regard $k$ as the smallest positive integer such that $\mu_r \subset \mathbb F_{p^k}$.
 \\ \\
-\noindent Alternatively, suppose that $k$ is the smallest positive integer such that $\mu_r \subset \mathbb F_{p^k}$.  $\mu_r \subset \mathbb F_{p^k} 
-\iff r \mid  \# %% CHANGE
-\mathbb F^*_{p^k}$ (since multiplicative groups of finite fields are cyclic) $ \iff p^k-1 \equiv 0 \mod r \iff p$ is a primitive $k$th root of unity mod $r$ (since we picked $k$ to be minimal). 
+\noindent Alternatively, suppose that $k$ is the smallest positive integer such that $\mu_r \subset \mathbb F_{p^k}$.  $\mu_r \subset \mathbb F_{p^k} \iff r \Big |  \# \mathbb F^*_{p^k}$ (since multiplicative groups of finite fields are cyclic) $ \iff p^k-1 \equiv 0 \mod r \iff p$ is a primitive $k$th root of unity mod $r$ (since we picked $k$ to be minimal). 
 \\ \\
 \noindent Therefore, the embedding degree $k$ is the smallest positive integer satisfying $p^k \equiv 1 \mod r$.
 
 \subsubsection{Pairing-Friendly Curves}
-The Weil/Tate Pairing is efficiently computable when $k$ is small, as computing the pairings requires computation in $\mathbb F_{p^k}$. A curve with efficiently computable pairings is {\it pairing-friendly}. Pairing-friendly curves are rare. In general, if $r \approx p$, then $\Pr[$pairing-friendly curve$] = O(\frac{(\log p)^9 (\log \log p)^2}{p})$. [IM98]
+The Weil/Tate Pairing is efficiently computable when $k$ is small, as computing the pairings requires computation in $\mathbb F_{p^k}$. A curve with efficiently computable pairings is {\it pairing-friendly}. Pairing-friendly curves are rare. In general, if $r \approx p$, then $\Pr[$pairing-friendly curve$] = O(\frac{\log^3 p}{p})$. [IM98]
 
 \subsection{Ordinary Curves}
 
@@ -291,14 +288,14 @@ j(\tau) = 1728 \frac{g_{2}^{3}}{g_{2}^{3} - 27 g_{3}^{2}} \, .
 \end{equation} 
 
  
-\noindent The theorem states that every lattice $\mathbb C/L \cong E(\mathbb C)$ for some elliptic curve $E$. However, it turns out that the converse is also true. Namely, $E(\mathbb C) \cong \mathbb C/L$ for some lattice $L$. This establishes an isomorphism between the endomorphism rings of $E(\mathbb C)$ and $\mathbb C/L$. The endomorphism ring of $L$ is the set $\{ \beta \in C \mid \beta L \subseteq L \}$. Therefore, we see that
+\noindent The theorem states that every lattice $\mathbb C/L \cong E(\mathbb C)$ for some elliptic curve $E$. However, it turns out that the converse is also true. Namely, $E(\mathbb C) \cong \mathbb C/L$ for some lattice $L$. This establishes an isomorphism between the endomorphism rings of $E(\mathbb C)$ and $\mathbb C/L$. The endomorphism ring of $L$ is the set $\{ \beta \in C | \beta L \subseteq L \}$. Therefore, we see that
 \begin{equation}
-End(E) \cong \{ \beta \in \mathbb C \mid \beta L \subseteq L \} 
+End(E) \cong \{ \beta \in \mathbb C | \beta L \subseteq L \} 
 \end{equation}  
 where the endomorphism $[n]$ on $E$ corresponds to $z \mapsto nz$ on $L$. Furthermore, there are endomorphisms in $End(E)$ that correspond to multiplication by multiplying the lattice by complex numbers. [WASH08]
-\begin{comment}
-\noindent For curves defined on a field $\mathbb F$, there is a homomorphism $\mathbb F \rightarrow \mathbb C$ if we linearly map the finite basis elements of $\mathbb F$, $\alpha_{1}, ...,\alpha_{n}$ respectively to any algebraically independent set of elements in $\mathbb{C}$, $\tau_{1},..., \tau_{n}$, so we can regard $E(\mathbb F)$ as a curve in $\mathbb{C}$.  
-\end{comment}
+\\ \\
+\noindent For curves defined on a field $\mathbb F$, there is a homomorphism $\mathbb F \rightarrow C$ if we linearly map the finite basis elements of $\mathbb F$, $\alpha_{1}, ...,\alpha_{n}$ respectively to any algebraically independent set of elements in $\mathbb{C}$, $\tau_{1},..., \tau_{n}$, so we can regard $E(\mathbb F)$ as a curve in $\mathbb{C}$.  
+
 \subsubsection{Endomorphism Rings}
 \begin{theorem}
 The elements $\beta$ in the endomorphism ring are algebraic integers that lie in some quadratic field $\mathbb Q[\sqrt D]$.
@@ -323,7 +320,7 @@ It turns out that $R$ will have have the form $\mathbb Z[f \frac{1 + \sqrt{D}}{2
 \noindent We state one final result that we will find useful.
 
 \begin{theorem}
-Let $E$ be an elliptic curve over $\mathbb Q$ with $End(E) \cong $ an order in $\mathbb Q[\sqrt D]$. Let $p$ be a prime such that $p \nmid \, \Delta(E)$. The following are equivalent:
+Let $E$ be an elliptic curve over $\mathbb Q$ with $End(E) \cong $ an order in $\mathbb Q[\sqrt D]$. Let $p$ be a prime such that $p \not \big | \, \Delta(E)$. The following are equivalent:
 \begin{enumerate} 
 \item $E(\mathbb F_p)$ is ordinary
 \item $\legendre{D}{p} = 1$ and $H_D(X)$ splits in $\mathbb F_p[x]$
@@ -331,7 +328,7 @@ Let $E$ be an elliptic curve over $\mathbb Q$ with $End(E) \cong $ an order in $
 \end{enumerate}
 \end{theorem}
 [WASH08], [SUTH15].
-It turns out that all endomorphisms will be roots of the quadratic $x^{2} - tx + p = 0$, hence the name discriminant for $t^{2} - 4p$, as $t^2 - 4p$ is the discriminant of this polynomial.
+It turns out that all endomorphisms will be roots of the quadratic $x^{2} - tx + p = 0$, hence the rise of the name "discriminant" $t^{2} - 4p$, which corresponds to the discriminant of this polynomial.
 
 
 \section{Constructing Pairing-Friendly Curves} 
@@ -363,13 +360,12 @@ The Complex Multiplication (CM) method is an algorithm for constructing ordinary
  
  
 \noindent The above algorithm will always succeed provided that such a curve $E$ exists and will be efficient if $D$ is not too large [SUTH15]. A slight subtlety arises if $j = 0$ or $j = 1728$. If $j = 0$, then there are $6$ classes of curves, corresponding to sextic twists of $E$ by $1, \zeta, \zeta^2, \dots, \zeta^5$, for $\zeta$, a primitive root of unity in $\mathbb F_p$. If $j = 1728$, then there are $4$ classes of curves, corresponding to quartic twists of $E$ by $1, \zeta, \dots \zeta^3$, for $\zeta$, a primitive root of unity in $\mathbb F_p$. If a curve $E$ exists, then one of these curves will satisfy the conditions of the algorithm. [SIL08, III.10]
-
 \subsection{Cocks-Pinch Method}
 
 We wish to construct a curve with a subgroup of size $r$ and embedding degree $k$. Suppose we also have chosen a CM discriminant $D$ such that $\legendre{D}{r} = 1$. The Cocks-Pinch method finds a prime $p$ and the trace of Frobenius $t$ such that $\exists$ an elliptic curve $E$ over $\mathbb F_p$ with trace $t$, and a subgroup of size $r$ with embedding degree $k$. There are $3$ conditions on $p,t$:
 \begin{enumerate}
 \item $t^2-4p = f^2 D$, for some $f$. This means that $E$ has CM discriminant $D$
-\item $p+1-t \equiv 0 \mod r$. This means that $r \mid \#E(\mathbb F_p) \implies $ there is a subgroup of size $r$ by the characterization of finitely generated abelian groups
+\item $p+1-t \equiv 0 \mod r$. This means that $r \Big | \#E(\mathbb F_p) \implies $ there is a subgroup of size $r$ by the characterization of finitely generated abelian groups
 \item $p$ is a primitive $k$th root of unity mod $r$. As mentioned earlier, this condition is equivalent to $E$ having embedding degree $k$ with respect to the subgroup of size $r$.
 
 \end{enumerate}
@@ -402,7 +398,7 @@ As is the case in the Cocks-Pinch method, we still need to find parameters $k,r,
 \begin{flalign*}
 {\rm Res}(f,g) = \prod (r_f-r_g)
 \end{flalign*}
-where $r_f$ and $r_g$ are the roots of $f(x)$ and $g(x)$ in $\overline{\mathbb F}$. From the definition, it is clear that Res$(f,g) = 0 \iff f$ and $g$ have a common root in $\overline{\mathbb F}$. We can replace condition (3) of the Cocks-Pinch method with $r \mid \Phi_k(q) \iff r \mid \Phi_k(t-1)$ (if condition 2 also holds), where $\Phi_k(x)$ is the $k$th cyclotomic polynomial. Suppose that $-f^2 D + (t-2)^2 \equiv 0 \mod r$. Then $0 \equiv -f^2 D + t^2 - 4t + 4 \equiv 4p - 4t + 4 \equiv 4(p+1-t) \mod r \implies p+1-t \equiv 0 \mod r$ since $\gcd(4,r) = 1$, and we can assume that $r \ne 2$. If we can find $a \in \mathbb Z$ such that $r =  $ Res$(\Phi_k(x-1), a+(x-2)^2)$ is a prime, then Res$(\Phi_k(x-1), a+(x-2)^2) \equiv 0 \mod r \implies \Phi_k(x-1)$ and $a+(x-2)^2$ have a common root in $\overline{\mathbb F_r}$ so that $g(x)  = \gcd(\Phi_k(x-1), a+(x-2)^2) \in \mathbb F_r[x]$ has a root in $\overline{\mathbb F_r}$. As it turns out, $g(x)$ will have a root in $\mathbb F_r$. [TAX10] If we let $t$ be this root, then we see that $\Phi_k(t-1) \equiv 0 \mod r$ and that $a + (t-2)^2 \equiv 0 \mod r$. If $\exists i \in \mathbb Z^+$ such that $p = \frac{(t+ir)^2 + a}{4}$ is a prime, then $p \equiv \frac{t^2 + a}{4} \mod r$ so that $p+1-t \equiv 0 \mod r$ by an earlier argument. Letting $-f^2 D = a$, we see that the three conditions are satisfied, and therefore we can use the CM method to construct the desired elliptic curve $E$. By the same argument used in the Cocks-Pinch method, we see that $| t | \leq 2 \sqrt p$. The algorithm is given below in pseudocode:
+where $r_f$ and $r_g$ are the roots of $f(x)$ and $g(x)$ in $\overline{\mathbb F}$. From the definition, it is clear that Res$(f,g) = 0 \iff f$ and $g$ have a common root in $\overline{\mathbb F}$. We can replace condition (3) of the Cocks-Pinch method with $r \Big | \Phi_k(q) \iff r \Big | \Phi_k(t-1)$ (if condition 2 also holds), where $\Phi_k(x)$ is the $k$th cyclotomic polynomial. Suppose that $-f^2 D + (t-2)^2 \equiv 0 \mod r$. Then $0 \equiv -f^2 D + t^2 - 4t + 4 \equiv 4p - 4t + 4 \equiv 4(p+1-t) \mod r \implies p+1-t \equiv 0 \mod r$ since $\gcd(4,r) = 1$, and we can assume that $r \ne 2$. If we can find $a \in \mathbb Z$ such that $r =  $ Res$(\Phi_k(x-1), a+(x-2)^2)$ is a prime, then Res$(\Phi_k(x-1), a+(x-2)^2) \equiv 0 \mod r \implies \Phi_k(x-1)$ and $a+(x-2)^2$ have a common root in $\overline{\mathbb F_r}$ so that $g(x)  = \gcd(\Phi_k(x-1), a+(x-2)^2) \in \mathbb F_r[x]$ has a root in $\overline{\mathbb F_r}$. As it turns out, $g(x)$ will have a root in $\mathbb F_r$. [TAX10] If we let $t$ be this root, then we see that $\Phi_k(t-1) \equiv 0 \mod r$ and that $a + (t-2)^2 \equiv 0 \mod r$. If $\exists i \in \mathbb Z^+$ such that $p = \frac{(t+ir)^2 + a}{4}$ is a prime, then $p \equiv \frac{t^2 + a}{4} \mod r$ so that $p+1-t \equiv 0 \mod r$ by an earlier argument. Letting $-f^2 D = a$, we see that the three conditions are satisfied, and therefore we can use the CM method to construct the desired elliptic curve $E$. By the same argument used in the Cocks-Pinch method, we see that $| t | \leq 2 \sqrt p$. The algorithm is given below in pseudocode:
 
 \begin{algorithm}[H]
 \KwIn{$k$, embedding degree}
@@ -439,7 +435,7 @@ Suppose $N = \#E(\mathbb F_p)$, and write $ N = \prod_{i}q_{i}^{e_{i}}$ as a pro
 The Menezes-Okamoto-Vanstone (MOV) attack relies on using pairings to solve the ECDLP. The idea behind the attack is to map the DLP on $E$ to the DLP in $\mathbb F_{p^k}$, where $k$ is the embedding degree, and then use the index calculus method to solve the DLP in subexponential time. This attack is efficient provided that $k$ is small. However, elliptic curves generally have large embedding degree with respect to any large subgroup, so this attack is only useful against pairing-friendly elliptic curves.
 
 \section{Concluding Remarks}
-In this project we have reviewed some of the important theory necessary to understanding the Complex Multiplication, Cocks-Pinch, and Dupont-Enge-Morain methods for curve construction. For each method, we motivated the idea behind the algorithm, and then gave the algorithm and explained its correctness. Both the Cocks-Pinch and Dupont-Enge-Morain methods can potentially be generalized to construct families of curves by finding functions that generate $p,t,r,k,D$ satisfying the three conditions. Pairings have many applications to cryptography, including identity-based encryption and 1-round 3-party Diffie-Hellman key exchange.
+In this project we have reviewed some of the important theory necessary to understanding the CM, Cocks-Pinch, and DEM methods for curve construction. For each method, we motivated the idea behind the algorithm, and then gave the algorithm and explained its correctness. Both the Cocks-Pinch and DEM methods can potentially be generalized to construct families of curves by finding functions that generate $p,t,r,k,D$ satisfying the three conditions. Pairings have many applications to cryptography, including identity-based encryption and 1-round 3-party Diffie Hellman key exchange.
 \newpage
 
 
